@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lab_testing"
+    tools:context=".TestActivity">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/hello"
+                android:textAlignment="center"
+                android:textColor="#D70F21"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/patientName"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <EditText
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/date_of_birth"
+                android:inputType="date" />
+
+            <Spinner
+                android:id="@+id/stateSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/states"
+                android:entries="@array/state_entries"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/complications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/health_complication"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <RadioGroup
+                android:id="@+id/healthComplication"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <RadioButton
+                    android:id="@+id/yesButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/yes_button" />
+
+                <RadioButton
+                    android:id="@+id/noButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_button" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/ifYes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/if_yes"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <EditText
+                android:id="@+id/healthCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/health"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/symptoms"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/seriousSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/serious_symptoms"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <CheckBox
+                android:id="@+id/breathingCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/difficulty_breathing" />
+
+            <CheckBox
+                android:id="@+id/chest_painCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chest_pain_or_pressure" />
+
+            <CheckBox
+                android:id="@+id/speechLossCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/loss_of_speech" />
+
+            <TextView
+                android:id="@+id/mostCommonSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/major_symptoms"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <CheckBox
+                android:id="@+id/feverCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fever" />
+
+            <CheckBox
+                android:id="@+id/dryCoughCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dry_cough" />
+
+            <CheckBox
+                android:id="@+id/tirednessCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tiredness" />
+
+            <TextView
+                android:id="@+id/endNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/end_note" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_btn_red"
+                android:onClick="submitTest"
+                android:text="@string/submit_test"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Covid-19 Self Test</string>
+    <string name="headline">Welcome to the Covid-19 Self Assessment App</string>
+    <string name="test_record_btn">VIEW PAST TEST RECORDS</string>
+    <string name="online_statistics">VIEW CURENT STATISTICS</string>
+    <string name="hello">Welcome! Take a few minutes to answer a few questions to help us determine
+        your possible Covid-19 status. Please note that the result produced is only a symptom analysis
+        result based on the answers you provided and does not satisfactorily determine your Covid-19 status.
+    </string>
+    <string name="name">Full Name</string>
+    <string name="date_of_birth">Date of Birth (DD/MM/YYYY)</string>
+    <string name="states">List of states for the user to select from</string>
+    <string name="health_complication">Do you have anyhealth complications?</string>
+    <string name="yes">Yes</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+    <string name="if_yes">If \"Yes\" please type the health complication in the box below. This will help us analyse your health condition better.</string>
+    <string name="health">Type your health condition</string>
+    <string name="symptoms">Thick all the symptoms that applies to you currently.</string>
+    <string name="fever">Fever</string>
+    <string name="dry_cough">Dry Cough</string>
+    <string name="tiredness">Tiredness</string>
+    <string name="major_symptoms">Major Symptoms</string>
+    <string name="difficulty_breathing">Difficulty breathing or shortness of breath</string>
+    <string name="chest_pain_or_pressure">Chest pain or Pressure</string>
+    <string name="loss_of_speech">Loss of speech or movement</string>
+    <string name="end_note">Note: The symptoms listed above are the major symptoms we need for our diagnosis. It is limited and does not consist of all the possible symptoms associated with Covid-19</string>
+    <string name="submit_test">Submit Test</string>
+    <string name="serious_symptoms">Serious Symptoms</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="difficulty_in_breathing">Difficulty in breathing</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/results_nav_graph"
+    app:startDestination="@id/testResultsFragment">
+
+    <fragment
+        android:id="@+id/testResultsFragment"
+        android:name="com.example.covid_19selftest.ui.test_results.TestResultsFragment"
+        android:label="result_fragment"
+        tools:layout="@layout/result_fragment" >
+        <action
+            android:id="@+id/action_testResultsFragment_to_resultDetails"
+            app:destination="@id/resultDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultDetails"
+        android:name="com.example.covid_19selftest.ui.test_results.ResultDetails"
+        android:label="result_details_fragment"
+        tools:layout="@layout/result_details_fragment" />
+</navigation>

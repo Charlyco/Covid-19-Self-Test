@@ -8,8 +8,8 @@
     tools:context=".TestActivity">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -45,6 +45,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
@@ -59,6 +60,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/date_of_birth"
                 android:inputType="date" />
@@ -119,10 +121,11 @@
             <EditText
                 android:id="@+id/healthCondition"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/health"
                 android:inputType="textPersonName" />
@@ -214,7 +217,8 @@
                 android:text="@string/submit_test"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="visible" />
 
         </LinearLayout>
     </ScrollView>

@@ -12,6 +12,10 @@ public class Patient {
     String dryCough;
     String tiredness;
 
+    public Patient() {
+
+    }
+
     public Patient(String name, String dateOfBirth, String state, String healthCondition, String breathing, String chestPain, String speechLoss, String fever, String dryCough, String tiredness) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;

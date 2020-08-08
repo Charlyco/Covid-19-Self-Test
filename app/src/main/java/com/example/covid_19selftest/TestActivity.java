@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import com.example.covid_19selftest.data.Patient;
+import com.example.covid_19selftest.data.Result;
 
 public class TestActivity extends AppCompatActivity {
     private EditText cName, cDateOfBirth, cHealthCondition;
@@ -74,7 +74,7 @@ public class TestActivity extends AppCompatActivity {
         if (cTiredness.isChecked()) {
             tiredness = "Tiredness";
         }
-        Patient cPatient = new Patient(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
+        Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
                 chestPain, speechLoss, fever, dryCough, tiredness);
     }
 }

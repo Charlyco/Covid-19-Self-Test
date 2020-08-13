@@ -25,7 +25,7 @@ public interface ResultDao {
     LiveData<List<Result>> loadNameAndState();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(Result... results);
+    void insertResult(Result results);
 
     @Delete
     void delete(Result result);

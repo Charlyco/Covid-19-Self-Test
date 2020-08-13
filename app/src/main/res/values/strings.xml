@@ -44,4 +44,9 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="difficulty_in_breathing">Difficulty in breathing</string>
+    <string name="chest_pain">Chest Pain</string>
+    <string name="speech_loss">Speech Loss</string>
+    <string name="fever">Fever</string>
+    <string name="dry_cough">Dry Cough</string>
+    <string name="tiredness">Tiredness</string>
 </resources>

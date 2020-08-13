@@ -60,19 +60,19 @@ public class TestActivity extends AppCompatActivity {
              cDiffBreathing = getString(R.string.difficulty_in_breathing);
         }
         if (cChestPain.isChecked()) {
-            chestPain = "Chest Pain";
+            chestPain = getString(R.string.chest_pain);
         }
         if (cSpeechLoss.isChecked()) {
-            speechLoss = "Speech Loss";
+            speechLoss = getString(R.string.speech_loss);
         }
         if (cFever.isChecked()) {
-            fever = "Fever";
+            fever = getString(R.string.fever);
         }
         if (cDryCough.isChecked()) {
-            dryCough = "Dry Cough";
+            dryCough = getString(R.string.dry_cough);
         }
         if (cTiredness.isChecked()) {
-            tiredness = "Tiredness";
+            tiredness = getString(R.string.tiredness);
         }
         Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
                 chestPain, speechLoss, fever, dryCough, tiredness);

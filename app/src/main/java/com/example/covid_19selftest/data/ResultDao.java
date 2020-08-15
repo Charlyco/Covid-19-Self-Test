@@ -11,18 +11,15 @@ import java.util.List;
 
 @Dao
 public interface ResultDao {
+//      Will be used to implement search for a particular patient by name
+    @Query("SELECT * FROM Result WHERE patient_name LIKE :name")
+    LiveData<List<Result>> findByName(String name);
 
     @Query("SELECT * FROM Result")
-    LiveData<Result[]> loadAllResults();
+    LiveData<List<Result>> loadAllResults();
 
-    @Query("SELECT * FROM Result WHERE patient_name LIKE :name")
-    LiveData<Result[]> findByName(String name);
-
-    @Query("SELECT * FROM Result WHERE rowid IN (:patientIds)")
-    LiveData<Result[]> loadAllByIds(int[] patientIds);
-
-    @Query("SELECT patient_name, state_of_origin FROM result")
-    LiveData<List<Result>> loadNameAndState();
+//    @Query("SELECT patient_name, state_of_origin FROM result")
+//    LiveData<List<Result>> loadNameAndState();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertResult(Result results);

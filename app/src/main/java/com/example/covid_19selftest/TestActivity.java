@@ -1,6 +1,7 @@
 package com.example.covid_19selftest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,17 +12,20 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.covid_19selftest.data.Result;
+import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
 public class TestActivity extends AppCompatActivity {
     private EditText cName, cDateOfBirth, cHealthCondition;
     private RadioGroup cHealthComplication;
     private Spinner cStateSpinner;
     private CheckBox cBreathing, cDryCough, cSpeechLoss, cFever, cChestPain, cTiredness;
+    private ResultViewModel cResultViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        cResultViewModel = new ViewModelProvider(this).get(ResultViewModel.class);
 
         cStateSpinner = findViewById(R.id.stateSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -56,6 +60,7 @@ public class TestActivity extends AppCompatActivity {
         String fever = "";
         String dryCough = "";
         String tiredness = "";
+        String status = "";
         if (cBreathing.isChecked()) {
              cDiffBreathing = getString(R.string.difficulty_in_breathing);
         }
@@ -74,7 +79,18 @@ public class TestActivity extends AppCompatActivity {
         if (cTiredness.isChecked()) {
             tiredness = getString(R.string.tiredness);
         }
+        if ((cBreathing.isChecked() && cChestPain.isChecked() && cSpeechLoss.isChecked()
+        || (cBreathing.isChecked() && cChestPain.isChecked() && cFever.isChecked())
+        || (cDryCough.isChecked() && cFever.isChecked() && cChestPain.isChecked() ))) {
+            status = getString(R.string.positive);
+        } else if ((cTiredness.isChecked() && cDryCough.isChecked())
+        || (cTiredness.isChecked() && cFever.isChecked())) {
+            status = getString(R.string.likely_positive);
+        } else {
+            status = getString(R.string.negative);
+        }
         Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
-                chestPain, speechLoss, fever, dryCough, tiredness);
+                chestPain, speechLoss, fever, dryCough, tiredness, status);
+        cResultViewModel.insertResult(cResult);
     }
 }

@@ -46,7 +46,8 @@
     <string name="difficulty_in_breathing">Difficulty in breathing</string>
     <string name="chest_pain">Chest Pain</string>
     <string name="speech_loss">Speech Loss</string>
-    <string name="fever">Fever</string>
-    <string name="dry_cough">Dry Cough</string>
-    <string name="tiredness">Tiredness</string>
+        <string name="item_row_icon">item row icon</string>
+    <string name="positive">Most likely positive</string>
+    <string name="likely_positive">Likely positive</string>
+    <string name="negative">Likely Negative</string>
 </resources>

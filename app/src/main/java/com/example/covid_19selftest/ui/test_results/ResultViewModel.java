@@ -2,20 +2,27 @@ package com.example.covid_19selftest.ui.test_results;
 
 import android.app.Application;
 
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.example.covid_19selftest.data.Result;
 
-public class ResultViewModel extends ViewModel {
+import java.util.List;
+
+public class ResultViewModel extends AndroidViewModel {
     private ResultRepository cResultRepository;
-    LiveData<Result[]> cAllResults;
+    LiveData<List<Result>> cAllResults;
 
     public ResultViewModel(Application application) {
+        super(application);
         cResultRepository = new ResultRepository(application);
         cAllResults = cResultRepository.loadAllResults();
     }
     public void insertResult(Result result){
         cResultRepository.insertResult(result);
+    }
+    public LiveData<List<Result>> loadResults() {
+        cResultRepository.loadAllResults();
+        return cAllResults;
     }
 }

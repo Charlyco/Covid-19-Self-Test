@@ -25,4 +25,7 @@ public class ResultViewModel extends AndroidViewModel {
         cResultRepository.loadAllResults();
         return cAllResults;
     }
+    public void deleteResult(Result result) {
+        cResultRepository.deleteResult(result);
+    }
 }

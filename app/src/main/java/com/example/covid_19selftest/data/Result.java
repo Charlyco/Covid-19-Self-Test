@@ -9,14 +9,13 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-@Fts4
+
 @Entity
 public class Result {
-    @Ignore
     @PrimaryKey (autoGenerate = true)
-    @ColumnInfo(name = "rowid")
     public int uid;
 
+    @NonNull
     @ColumnInfo(name = "patient_name")
     public String name ;
 
@@ -39,7 +38,8 @@ public class Result {
     }
 
     public Result(String name, String dateOfBirth, String state, String healthCondition,
-                  String breathing, String chestPain, String speechLoss, String fever, String dryCough, String tiredness, String status) {
+                  String breathing, String chestPain, String speechLoss, String fever,
+                  String dryCough, String tiredness, String status) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.state = state;
@@ -53,6 +53,7 @@ public class Result {
         this.status = status;
     }
 
+    @NotNull
     public String getName() {
         return name;
     }

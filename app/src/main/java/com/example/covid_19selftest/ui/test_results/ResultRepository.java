@@ -31,5 +31,13 @@ public class ResultRepository {
             }
         });
     }
+    public void deleteResult(final Result result) {
+        ResultDataBase.cDatabaseExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                cResultDao.delete(result);
+            }
+        });
+    }
 
 }

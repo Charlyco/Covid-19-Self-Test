@@ -14,7 +14,7 @@ public class TestResults extends AppCompatActivity {
         setContentView(R.layout.test_results_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, TestResultsFragment.newInstance())
+                    .replace(R.id.nav_host_fragment, TestResultsFragment.newInstance())
                     .commitNow();
         }
     }

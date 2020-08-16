@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchTestRecords(View view) {
-
+        startActivity(new Intent(this, TestResults.class));
     }
 
     public void viewWhoStats(View view) {

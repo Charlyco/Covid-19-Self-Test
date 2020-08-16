@@ -3,6 +3,7 @@ package com.example.covid_19selftest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -92,5 +93,6 @@ public class TestActivity extends AppCompatActivity {
         Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
                 chestPain, speechLoss, fever, dryCough, tiredness, status);
         cResultViewModel.insertResult(cResult);
+        startActivity(new Intent(this, TestResults.class));
     }
 }

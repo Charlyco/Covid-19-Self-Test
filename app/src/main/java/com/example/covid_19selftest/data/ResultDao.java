@@ -27,6 +27,4 @@ public interface ResultDao {
     @Delete
     void delete(Result result);
 
-    @Delete
-    void deleteAll(Result...results);
 }

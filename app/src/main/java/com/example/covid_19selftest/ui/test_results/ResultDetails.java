@@ -16,9 +16,7 @@ import com.example.covid_19selftest.R;
 
 public class ResultDetails extends Fragment {
 
-    private ResultDetailsViewModel mViewModel;
-
-    public static ResultDetails newInstance() {
+       public static ResultDetails newInstance() {
         return new ResultDetails();
     }
 
@@ -31,8 +29,5 @@ public class ResultDetails extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(ResultDetailsViewModel.class);
-        // TODO: Use the ViewModel
     }
-
 }

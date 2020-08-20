@@ -55,13 +55,13 @@ public class TestActivity extends AppCompatActivity {
         if (cHealthComplication.getCheckedRadioButtonId() == R.id.yesButton) {
              cHealthCond = cHealthCondition.getText().toString();
         }
-        String cDiffBreathing = "";
-        String chestPain = "";
-        String speechLoss = "";
-        String fever = "";
-        String dryCough = "";
-        String tiredness = "";
-        String status = "";
+        String cDiffBreathing = null;
+        String chestPain = null;
+        String speechLoss = null;
+        String fever = null;
+        String dryCough = null;
+        String tiredness = null;
+        String status;
         if (cBreathing.isChecked()) {
              cDiffBreathing = getString(R.string.difficulty_in_breathing);
         }

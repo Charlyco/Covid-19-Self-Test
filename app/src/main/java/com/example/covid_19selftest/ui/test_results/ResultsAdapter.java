@@ -1,6 +1,7 @@
 package com.example.covid_19selftest.ui.test_results;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultViewHolder> {
     private LayoutInflater cInflater;
     private List<Result> cResults;
-    private TestResultsFragment cTestResultsFragment;
+    private OnItemClickedListener cClickedListener;
 
     public ResultsAdapter(Context context) {
         cInflater = LayoutInflater.from(context);
@@ -31,17 +32,16 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ResultViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ResultViewHolder holder, final int position) {
         if (cResults != null) {
             final Result currentResult = cResults.get(position);
             holder.patient_name.setText(currentResult.getName());
             holder.status.setText(currentResult.getStatus());
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    return false;
-                }
-            });
+            if (currentResult.getStatus().equals("Most Likely Positive")) {
+                holder.status.setTextColor(Color.RED);
+            } else if (currentResult.getStatus().equals("Likely Positive")) {
+                holder.status.setTextColor(Color.YELLOW);
+            } else holder.status.setTextColor(Color.GREEN);
         }
     }
 
@@ -56,25 +56,30 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
         cResults = results;
         notifyDataSetChanged();
     }
+    public void setClickedListener(OnItemClickedListener clickedListener) {
+        this.cClickedListener = clickedListener;
+    }
     public Result getResultAtPosition(int position){
         return cResults.get(position);
     }
 
-    public class ResultViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ResultViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView patient_name;
         private TextView status;
+
 
         public ResultViewHolder(@NonNull View itemView) {
             super(itemView);
             patient_name = itemView.findViewById(R.id.user_name);
             status = itemView.findViewById(R.id.status);
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            int position = getAdapterPosition();
-            Result clickedResult = getResultAtPosition(position);
-            cTestResultsFragment.launchResultDetails(view, clickedResult);
+            if (cClickedListener != null) {
+                cClickedListener.onClick(view, getAdapterPosition());
+            }
         }
     }
 }

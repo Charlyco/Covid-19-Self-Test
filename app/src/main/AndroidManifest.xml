@@ -9,12 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestResults"></activity>
-        <activity android:name=".GlobalStatistics" />
+        <activity
+            android:name=".TestResults"
+            android:label="Test Result">
+        </activity>
+
+        <activity
+            android:name=".GlobalStatistics"
+            android:label="Current Global Statistics">
+        </activity>
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".TestActivity" />
+
+        <activity
+            android:name=".TestActivity"
+            android:label="Take The Test"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

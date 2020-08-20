@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.covid_19selftest.R;
@@ -26,9 +28,11 @@ import com.example.covid_19selftest.data.Result;
 
 import java.util.List;
 
-public class TestResultsFragment extends Fragment {
+public class TestResultsFragment extends Fragment implements OnItemClickedListener{
     private ResultViewModel cResultViewModel;
     private ResultsAdapter cResultsAdapter;
+    private RecyclerView cRecyclerView;
+    private Result cResult;
 
     public static TestResultsFragment newInstance() {
         return new TestResultsFragment();
@@ -40,9 +44,10 @@ public class TestResultsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.result_fragment, container, false);
         cResultsAdapter = new ResultsAdapter(getContext());
-        RecyclerView cRecyclerView = root.findViewById(R.id.resultsRecyclerView);
+        cRecyclerView = root.findViewById(R.id.resultsRecyclerView);
         cRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         cRecyclerView.setAdapter(cResultsAdapter);
+        cResultsAdapter.setClickedListener(this);
 
         ItemTouchHelper cTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -89,17 +94,25 @@ public class TestResultsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        cResultViewModel = new ViewModelProvider(this).get(ResultViewModel.class);
+        cResultViewModel = new ViewModelProvider(requireActivity()).get(ResultViewModel.class);
         cResultViewModel.loadResults().observe(getViewLifecycleOwner(), new Observer<List<Result>>() {
             @Override
             public void onChanged(List<Result> results) {
                 cResultsAdapter.setResults(results);
             }
         });
+
     }
-    public void launchResultDetails(View view, Result result) {
+    public void launchResultDetails(View view) {
         NavDirections action = TestResultsFragmentDirections
                 .actionTestResultsFragmentToResultDetails();
         Navigation.findNavController(view).navigate(action);
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        cResult = cResultsAdapter.getResultAtPosition(position);
+        cResultViewModel.selectResult(cResult);
+        launchResultDetails(view);
     }
 }

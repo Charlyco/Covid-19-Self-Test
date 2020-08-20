@@ -11,7 +11,6 @@
     <string name="date_of_birth">Date of Birth (DD/MM/YYYY)</string>
     <string name="states">List of states for the user to select from</string>
     <string name="health_complication">Do you have anyhealth complications?</string>
-    <string name="yes">Yes</string>
     <string name="yes_button">Yes</string>
     <string name="no_button">No</string>
     <string name="if_yes">If \"Yes\" please type the health complication in the box below. This will help us analyse your health condition better.</string>
@@ -47,7 +46,11 @@
     <string name="chest_pain">Chest Pain</string>
     <string name="speech_loss">Speech Loss</string>
         <string name="item_row_icon">item row icon</string>
-    <string name="positive">Most likely positive</string>
-    <string name="likely_positive">Likely positive</string>
+    <string name="positive">Most Likely Positive</string>
+    <string name="likely_positive">Likely Positive</string>
     <string name="negative">Likely Negative</string>
+    <string name="hello_user">Hello user</string>
+    <string name="result_summay">This is the summary of your test based on the symptoms you indicated as positive:</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

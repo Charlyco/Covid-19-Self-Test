@@ -9,7 +9,6 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-
 @Entity
 public class Result {
     @PrimaryKey (autoGenerate = true)
@@ -17,7 +16,7 @@ public class Result {
 
     @NonNull
     @ColumnInfo(name = "patient_name")
-    public String name ;
+    public String name;
 
     @ColumnInfo(name = "date_of_birth")
     public String dateOfBirth;
@@ -37,7 +36,7 @@ public class Result {
     public Result() {
     }
 
-    public Result(String name, String dateOfBirth, String state, String healthCondition,
+    public Result(@NonNull String name, String dateOfBirth, String state, String healthCondition,
                   String breathing, String chestPain, String speechLoss, String fever,
                   String dryCough, String tiredness, String status) {
         this.name = name;

@@ -118,7 +118,7 @@ public class ResultDetails extends Fragment {
             cHealthBuilder.append("You have the following health complication: ");
             cHealthBuilder.append(result.getHealthCondition());
             cHealthCondition.setText(cHealthBuilder);
-            cHealthCondition.setTextColor(Color.GREEN);
+            cHealthCondition.setTextColor(Color.RED);
         }
         StringBuilder status = new StringBuilder();
         status.append("Your probable Covid-19 status: ");

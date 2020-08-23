@@ -46,7 +46,8 @@ public class TestActivity extends AppCompatActivity {
         cTiredness = findViewById(R.id.tirednessCheckBox);
         cHealthComplication = findViewById(R.id.healthComplication);
     }
-
+/* the submitTest method still needs to be modified to include the use of health complication
+   to determine status */
     public void submitTest(View view) {
         String cPatientName = cName.getText().toString();
         String cDoB = cDateOfBirth.getText().toString();

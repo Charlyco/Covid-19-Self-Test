@@ -40,6 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewWhoStats(View view) {
-        startActivity(new Intent(this, GlobalStatistics.class));
+        startActivity(new Intent(this, Covid_19_stat.class));
     }
 }

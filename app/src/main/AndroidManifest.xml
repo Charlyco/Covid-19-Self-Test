@@ -17,7 +17,7 @@
         </activity>
 
         <activity
-            android:name=".GlobalStatistics"
+            android:name=".Covid_19_stat"
             android:label="Current Global Statistics">
         </activity>
 

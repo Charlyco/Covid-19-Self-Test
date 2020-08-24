@@ -1,4 +1,4 @@
-package com.example.covid_19selftest.ui.test_results;
+package com.example.covid_19selftest;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.Observer;
@@ -16,19 +16,19 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.example.covid_19selftest.R;
 import com.example.covid_19selftest.data.Result;
+import com.example.covid_19selftest.ui.test_results.OnItemClickedListener;
+import com.example.covid_19selftest.ui.test_results.ResultViewModel;
+import com.example.covid_19selftest.ui.test_results.ResultsAdapter;
 
 import java.util.List;
 
-public class TestResultsFragment extends Fragment implements OnItemClickedListener{
+public class TestResultsFragment extends Fragment implements OnItemClickedListener {
     private ResultViewModel cResultViewModel;
     private ResultsAdapter cResultsAdapter;
     private RecyclerView cRecyclerView;

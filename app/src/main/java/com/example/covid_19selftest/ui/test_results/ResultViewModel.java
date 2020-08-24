@@ -17,7 +17,7 @@ public class ResultViewModel extends AndroidViewModel {
     public void selectResult(Result result) {
         selected.setValue(result);
     }
-    MutableLiveData<Result> getSelected() {
+    public MutableLiveData<Result> getSelected() {
         return selected;
     }
 

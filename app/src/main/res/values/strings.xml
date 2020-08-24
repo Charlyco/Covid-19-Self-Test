@@ -53,4 +53,6 @@
     <string name="result_summay">This is the summary of your test based on the symptoms you indicated as positive:</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="statistics_intro">REALTIME RECORD OF COVID-19 CASES IN NIGERIA</string>
+    <string name="breakdown">BREAKDOWN OF CASES BY STATES</string>
 </resources>

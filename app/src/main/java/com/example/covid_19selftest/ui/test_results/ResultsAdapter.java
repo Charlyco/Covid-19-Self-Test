@@ -52,7 +52,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
         else return 0;
     }
 
-    void setResults(List<Result> results) {
+    public void setResults(List<Result> results) {
         cResults = results;
         notifyDataSetChanged();
     }

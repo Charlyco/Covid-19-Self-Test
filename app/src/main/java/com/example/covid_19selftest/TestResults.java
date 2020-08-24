@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.covid_19selftest.ui.test_results.TestResultsFragment;
-
 public class TestResults extends AppCompatActivity {
     Fragment cResultFragment;
 

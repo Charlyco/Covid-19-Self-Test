@@ -1,4 +1,4 @@
-package com.example.covid_19selftest.ui.test_results;
+package com.example.covid_19selftest;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -10,14 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.covid_19selftest.R;
 import com.example.covid_19selftest.data.Result;
+import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
 public class ResultDetails extends Fragment {
     private ResultViewModel cResultViewModel;

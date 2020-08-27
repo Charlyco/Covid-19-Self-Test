@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/coro_virus1"
+    android:background="@drawable/covid19"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,11 +16,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-black"
         android:text="@string/headline"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/red"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,9 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/rounded_img_btn"
         android:onClick="launchTest"
         android:src="@drawable/covid_test1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,28 +46,32 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_btn"
         android:onClick="launchTestRecords"
         android:text="@string/test_record_btn"
-        android:textColor="@color/btn_text_color"
+        android:textColor="@color/blue"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/takeTestButton"
-        app:layout_constraintStart_toStartOf="@+id/takeTestButton"
-        app:layout_constraintTop_toBottomOf="@+id/takeTestButton" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/currentStatBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/currentStatBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_btn"
         android:onClick="viewWhoStats"
         android:text="@string/online_statistics"
-        android:textColor="@color/btn_text_color"
+        android:textColor="@color/blue"
         android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/testRecordBtn"
-        app:layout_constraintStart_toStartOf="@+id/testRecordBtn"
-        app:layout_constraintTop_toBottomOf="@+id/testRecordBtn" />
+        app:layout_constraintStart_toStartOf="@+id/testRecordBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

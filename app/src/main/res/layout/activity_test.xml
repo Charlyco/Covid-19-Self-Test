@@ -31,8 +31,8 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/hello"
                 android:textAlignment="center"
-                android:textColor="#D70F21"
-                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -84,7 +84,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/health_complication"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/blue"
+                android:textSize="16sp" />
 
             <RadioGroup
                 android:id="@+id/healthComplication"
@@ -98,13 +99,15 @@
                     android:id="@+id/yesButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/yes_button" />
+                    android:text="@string/yes_button"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/noButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_button" />
+                    android:text="@string/no_button"
+                    android:textSize="16sp" />
 
             </RadioGroup>
 
@@ -116,7 +119,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/if_yes"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/blue"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/healthCondition"
@@ -138,7 +142,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/symptoms"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/blue"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/seriousSymptoms"
@@ -148,25 +153,30 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/serious_symptoms"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
 
             <CheckBox
                 android:id="@+id/breathingCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/difficulty_breathing" />
+                android:text="@string/difficulty_breathing"
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/chest_painCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/chest_pain_or_pressure" />
+                android:text="@string/chest_pain_or_pressure"
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/speechLossCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/loss_of_speech" />
+                android:text="@string/loss_of_speech"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/mostCommonSymptoms"
@@ -176,25 +186,30 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/major_symptoms"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
 
             <CheckBox
                 android:id="@+id/feverCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fever" />
+                android:text="@string/fever"
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/dryCoughCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/dry_cough" />
+                android:text="@string/dry_cough"
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/tirednessCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tiredness" />
+                android:text="@string/tiredness"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/endNote"

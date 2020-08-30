@@ -3,7 +3,6 @@ package com.example.covid_19selftest.data;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Fts4;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
@@ -30,15 +29,17 @@ public class Result {
     public String fever;
     public String dryCough;
     public String tiredness;
-    public String status;
+    public String soreThroat;
+    public String tasteLoss;
+    public String recommendation;
 
     @Ignore
     public Result() {
     }
 
     public Result(@NonNull String name, String dateOfBirth, String state, String healthCondition,
-                  String breathing, String chestPain, String speechLoss, String fever,
-                  String dryCough, String tiredness, String status) {
+                  String breathing, String chestPain, String speechLoss, String tasteLoss, String fever,
+                  String dryCough, String tiredness, String soreThroat, String recommendation) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.state = state;
@@ -46,10 +47,12 @@ public class Result {
         this.breathing = breathing;
         this.chestPain = chestPain;
         this.speechLoss = speechLoss;
+        this.tasteLoss = tasteLoss;
         this.fever = fever;
         this.dryCough = dryCough;
         this.tiredness = tiredness;
-        this.status = status;
+        this.soreThroat = soreThroat;
+        this.recommendation = recommendation;
     }
 
     @NotNull
@@ -81,6 +84,8 @@ public class Result {
         return speechLoss;
     }
 
+    public String getTasteLoss() { return tasteLoss; }
+
     public String getFever() {
         return fever;
     }
@@ -93,7 +98,9 @@ public class Result {
         return tiredness;
     }
 
-    public String getStatus() {
-        return status;
+    public String getSoreThroat() { return soreThroat; }
+
+    public String getRecommendation() {
+        return recommendation;
     }
 }

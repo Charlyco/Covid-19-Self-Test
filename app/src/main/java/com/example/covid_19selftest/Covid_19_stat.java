@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.covid_19selftest.data.Api;
 import com.example.covid_19selftest.data.Data;
@@ -66,8 +67,7 @@ public class Covid_19_stat extends AppCompatActivity {
 
             @Override
             public void onFailure(@NotNull Call<Api> call, @NotNull Throwable t) {
-                TextView record = findViewById(R.id.response);
-                record.setText(t.getMessage());
+                Toast.makeText(Covid_19_stat.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 cProgressBar.setVisibility(View.INVISIBLE);
             }
         });
@@ -82,27 +82,27 @@ public class Covid_19_stat extends AppCompatActivity {
 
     private void setTotalValues(Data data) {
         StringBuilder samplesBuilder = new StringBuilder();
-        samplesBuilder.append(getString(R.string.total_samples));
+        samplesBuilder.append("Total Samples Tested:  ");
         samplesBuilder.append(data.getTotalSamplesTested());
         totalSamples.setText(samplesBuilder);
 
         StringBuilder confirmedCasesBuilder = new StringBuilder();
-        confirmedCasesBuilder.append(getString(R.string.total_confirmed));
+        confirmedCasesBuilder.append("Total Confirmed Cases:  ");
         confirmedCasesBuilder.append(data.getTotalConfirmedCases());
         totalConfirmed.setText(confirmedCasesBuilder);
 
-        StringBuilder acttiveCasesBuilder = new StringBuilder();
-        acttiveCasesBuilder.append(getString(R.string.active_cases));
-        acttiveCasesBuilder.append(data.getTotalActiveCases());
-        activeCases.setText(acttiveCasesBuilder);
+        StringBuilder activeCasesBuilder = new StringBuilder();
+        activeCasesBuilder.append("Total Active Cases:  ");
+        activeCasesBuilder.append(data.getTotalActiveCases());
+        activeCases.setText(activeCasesBuilder);
 
         StringBuilder dischargedBuilder = new StringBuilder();
-        dischargedBuilder.append(getString(R.string.total_discharged));
+        dischargedBuilder.append("Discharged:  ");
         dischargedBuilder.append(data.getDischarged());
         dischargedCases.setText(dischargedBuilder);
 
         StringBuilder deathsBuilder = new StringBuilder();
-        deathsBuilder.append(getString(R.string.total_deaths));
+        deathsBuilder.append("Total Deaths:  ");
         deathsBuilder.append(data.getDeath());
         deaths.setText(deathsBuilder);
     }

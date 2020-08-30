@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lab_testing"
     tools:context=".TestActivity">
 
     <ScrollView
@@ -75,7 +74,6 @@
                 android:contentDescription="@string/states"
                 android:entries="@array/state_entries"
                 android:spinnerMode="dropdown" />
-
             <TextView
                 android:id="@+id/complications"
                 android:layout_width="match_parent"
@@ -145,18 +143,6 @@
                 android:textColor="@color/blue"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/seriousSymptoms"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/serious_symptoms"
-                android:textColor="@color/red"
-                android:textSize="16sp"
-                android:textStyle="bold|italic" />
-
             <CheckBox
                 android:id="@+id/breathingCheckBox"
                 android:layout_width="match_parent"
@@ -178,17 +164,12 @@
                 android:text="@string/loss_of_speech"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/mostCommonSymptoms"
+            <CheckBox
+                android:id="@+id/lossOfTasteCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/major_symptoms"
-                android:textColor="@color/red"
-                android:textSize="16sp"
-                android:textStyle="bold|italic" />
+                android:text="@string/loss_of_taste"
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/feverCheckBox"
@@ -209,6 +190,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tiredness"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/soreThroatCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sore_throat"
                 android:textSize="16sp" />
 
             <TextView

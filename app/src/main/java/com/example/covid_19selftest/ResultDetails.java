@@ -21,7 +21,7 @@ import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 public class ResultDetails extends Fragment {
     private ResultViewModel cResultViewModel;
     private TextView cUserName, cSymptom1, cSymptom2, cSymptom3, cSymptom4,
-            cSymptom5, cSymptom6, cHealthCondition, cStatus;
+            cSymptom5, cSymptom6, cSymptom7, cSymptom8, cHealthCondition, cRecommendation;
 
        public static ResultDetails newInstance() {
         return new ResultDetails();
@@ -38,8 +38,10 @@ public class ResultDetails extends Fragment {
            cSymptom4 = root.findViewById(R.id.symptom4);
            cSymptom5 = root.findViewById(R.id.symptom5);
            cSymptom6 = root.findViewById(R.id.symptom6);
+           cSymptom7 = root.findViewById(R.id.symptom7);
+           cSymptom8 = root.findViewById(R.id.symptom8);
            cHealthCondition = root.findViewById(R.id.healthComplication);
-           cStatus = root.findViewById(R.id.status_info);
+           cRecommendation = root.findViewById(R.id.status_info);
         return root;
     }
 
@@ -85,15 +87,15 @@ public class ResultDetails extends Fragment {
             cSymptom3.setTextColor(Color.RED);
         }
 
-        if (result.getFever() == null) {
-            cSymptom4.setText(R.string.no);
+        if (result.getTasteLoss() == null) {
+            cSymptom4.setText("No");
             cSymptom4.setTextColor(Color.GREEN);
         } else {
-            cSymptom4.setText(R.string.yes);
+            cSymptom4.setText("Yes");
             cSymptom4.setTextColor(Color.RED);
         }
 
-        if (result.getDryCough() == null) {
+        if (result.getFever() == null) {
             cSymptom5.setText(R.string.no);
             cSymptom5.setTextColor(Color.GREEN);
         } else {
@@ -101,12 +103,28 @@ public class ResultDetails extends Fragment {
             cSymptom5.setTextColor(Color.RED);
         }
 
-        if (result.getTiredness() == null) {
+        if (result.getDryCough() == null) {
             cSymptom6.setText(R.string.no);
             cSymptom6.setTextColor(Color.GREEN);
         } else {
             cSymptom6.setText(R.string.yes);
             cSymptom6.setTextColor(Color.RED);
+        }
+
+        if (result.getTiredness() == null) {
+            cSymptom7.setText(R.string.no);
+            cSymptom7.setTextColor(Color.GREEN);
+        } else {
+            cSymptom7.setText(R.string.yes);
+            cSymptom7.setTextColor(Color.RED);
+        }
+
+        if (result.getSoreThroat() == null) {
+            cSymptom8.setText(R.string.no);
+            cSymptom8.setTextColor(Color.GREEN);
+        } else {
+            cSymptom8.setText(R.string.yes);
+            cSymptom8.setTextColor(Color.RED);
         }
 
         if (result.getHealthCondition() == null){
@@ -121,12 +139,12 @@ public class ResultDetails extends Fragment {
         }
         StringBuilder status = new StringBuilder();
         status.append("Your probable Covid-19 status: ");
-        status.append(result.getStatus());
-        cStatus.setText(status);
-        if (result.getStatus().equals("Most Likely Positive")) {
-            cStatus.setTextColor(Color.RED);
-        } else if (result.getStatus().equals("Likely Positive")) {
-            cStatus.setTextColor(Color.YELLOW);
-        } else cStatus.setTextColor(Color.GREEN);
+        status.append(result.getRecommendation());
+        cRecommendation.setText(status);
+        if (result.getRecommendation().equals("Most Likely Positive")) {
+            cRecommendation.setTextColor(Color.RED);
+        } else if (result.getRecommendation().equals("Likely Positive")) {
+            cRecommendation.setTextColor(Color.YELLOW);
+        } else cRecommendation.setTextColor(Color.GREEN);
     }
 }

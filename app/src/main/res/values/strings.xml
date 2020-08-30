@@ -2,30 +2,34 @@
     <string name="app_name">Covid-19 Self Test</string>
     <string name="headline">Help Stop The Spread of Covid-19. Get Yourself Tested Today</string>
     <string name="test_record_btn">VIEW PAST TEST RECORDS</string>
-    <string name="online_statistics">VIEW CURENT STATISTICS</string>
+    <string name="online_statistics">VIEW CURRENT STATISTICS</string>
     <string name="hello">Welcome! Take a few minutes to answer a few questions to help us determine
         your possible Covid-19 status. Please note that the result produced is only a symptom analysis
         result based on the answers you provided and does not satisfactorily determine your Covid-19 status.
+        This self assessment tool serves only for informational purposes and should not be regarded as a medical diagnosis
     </string>
     <string name="name">Full Name</string>
     <string name="date_of_birth">Date of Birth (DD/MM/YYYY)</string>
     <string name="states">List of states for the user to select from</string>
-    <string name="health_complication">Do you have anyhealth complications?</string>
+    <string name="health_complication">Do you have any health complications?</string>
     <string name="yes_button">Yes</string>
     <string name="no_button">No</string>
-    <string name="if_yes">If \"Yes\" please type the health complication in the box below. This will help us analyse your health condition better.</string>
+    <string name="if_yes">If \"Yes\" please type the health complication in the box below.
+        This will help us analyse your health condition better.</string>
     <string name="health">Type your health condition</string>
     <string name="symptoms">Thick all the symptoms that applies to you currently.</string>
-    <string name="fever">Fever</string>
+    <string name="fever">High Fever</string>
     <string name="dry_cough">Dry Cough</string>
-    <string name="tiredness">Tiredness</string>
-    <string name="major_symptoms">Major Symptoms</string>
+    <string name="loss_of_taste">Loss of Taste of Smell</string>
+    <string name="tiredness">Tiredness of Fatigue</string>
     <string name="difficulty_breathing">Difficulty breathing or shortness of breath</string>
     <string name="chest_pain_or_pressure">Chest pain or Pressure</string>
     <string name="loss_of_speech">Loss of speech or movement</string>
-    <string name="end_note">Note: The symptoms listed above are the major symptoms we need for our diagnosis. It is limited and does not consist of all the possible symptoms associated with Covid-19</string>
+    <string name="sore_throat">Sore throat or runny nose</string>
+    <string name="end_note">Note: The symptoms listed above are the major symptoms we need for our
+        assessment. It is limited and does not consist of all the possible symptoms associated with
+        Covid-19</string>
     <string name="submit_test">Submit Test</string>
-    <string name="serious_symptoms">Serious Symptoms</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -42,22 +46,34 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    
+   <!-- Test Strings -->
     <string name="difficulty_in_breathing">Difficulty in breathing</string>
     <string name="chest_pain">Chest Pain</string>
     <string name="speech_loss">Speech Loss</string>
         <string name="item_row_icon">item row icon</string>
-    <string name="positive">Most Likely Positive</string>
+    <string name="positive_recommendation">Please we strongly recommend that you should consult the
+        NCDC immediately. Click the button below to forward your assessment result to the NCDC by clicking the button
+        "FORWARD RESULT TO NCDC" button below. for further action.</string>
+    <string name="positive">Most likely positive</string>
+    <string name="less_likely_positive_recommend">Your symptoms seems to be less serious but we do
+        recommend that you contact the nearest medical facility nearest to you medical test. You can
+        as well forward your assessment result to the NCDC by clicking the button "FORWARD RESULT TO
+        NCDC" button below.</string>
     <string name="likely_positive">Likely Positive</string>
     <string name="negative">Likely Negative</string>
+    <string name="negative_recommendation">You don\'t seem to have a enough symptoms that could suggest having COVID-19.
+    However we recommend that you visit a medical facility for medical test if symptoms persist or worsens</string>
     <string name="hello_user">Hello user</string>
-    <string name="result_summay">This is the summary of your test based on the symptoms you indicated as positive:</string>
+    <string name="result_summary">This is the summary of your test based on the symptoms you indicated as positive:</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="statistics_intro">REALTIME RECORD OF COVID-19 CASES IN NIGERIA</string>
     <string name="breakdown">BREAKDOWN OF CASES BY STATES</string>
-    <string name="total_samples">\"Total Samples Tested: \"</string>
-    <string name="total_confirmed">\"Total Confirmed Cases: \"</string>
-    <string name="active_cases">\"Total Active Cases: \"</string>
-    <string name="total_discharged">\"Discharged: \"</string>
-    <string name="total_deaths">\"Total Deaths: \"</string>
+    <string name="total_samples">Total Samples Tested:  </string>
+    <string name="total_confirmed">Total Confirmed Cases:  </string>
+    <string name="active_cases">Total Active Cases:  </string>
+    <string name="total_discharged">Discharged:  </string>
+    <string name="total_deaths">Total Deaths:  </string>
+    <string name="send_result">FORWARD RESULT TO NCDC</string>
 </resources>

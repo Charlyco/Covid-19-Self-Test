@@ -10,26 +10,12 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         android:background="@drawable/covid_est1"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/response"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            android:text="@string/statistics_intro"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/totalSamplesState"
@@ -42,7 +28,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="total Samples Tested" />
+            tools:text="Total Samples Tested" />
 
         <TextView
             android:id="@+id/totalConfirmedCases"
@@ -55,7 +41,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="totalConfirmedCases" />
+            tools:text="TotalConfirmedCases" />
 
         <TextView
             android:id="@+id/activeCases"
@@ -81,7 +67,7 @@
             android:textColor="@color/green"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="discharged" />
+            tools:text="Discharged" />
 
         <TextView
             android:id="@+id/deaths"
@@ -94,7 +80,7 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="deaths" />
+            tools:text="Deaths" />
     </LinearLayout>
 
     <TextView
@@ -123,8 +109,10 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/breakdown"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/states_list_row" />
 
     <ProgressBar
@@ -135,7 +123,7 @@
         android:layout_marginTop="8dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/breakdown"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

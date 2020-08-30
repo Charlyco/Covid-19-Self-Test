@@ -19,7 +19,7 @@ public class TestActivity extends AppCompatActivity {
     private EditText cName, cDateOfBirth, cHealthCondition;
     private RadioGroup cHealthComplication;
     private Spinner cStateSpinner;
-    private CheckBox cBreathing, cDryCough, cSpeechLoss, cFever, cChestPain, cTiredness;
+    private CheckBox cBreathing, cDryCough, cSpeechLoss, cTasteLoss, cFever, cChestPain, cTiredness, cSoreThroat;
     private ResultViewModel cResultViewModel;
 
     @Override
@@ -41,9 +41,11 @@ public class TestActivity extends AppCompatActivity {
         cBreathing = findViewById(R.id.breathingCheckBox);
         cChestPain = findViewById(R.id.chest_painCheckBox);
         cSpeechLoss = findViewById(R.id.speechLossCheckBox);
+        cTasteLoss = findViewById(R.id.lossOfTasteCheckBox);
         cFever = findViewById(R.id.feverCheckBox);
         cDryCough = findViewById(R.id.dryCoughCheckBox);
         cTiredness = findViewById(R.id.tirednessCheckBox);
+        cSoreThroat = findViewById(R.id.soreThroatCheckBox);
         cHealthComplication = findViewById(R.id.healthComplication);
     }
 /* the submitTest method still needs to be modified to include the use of health complication
@@ -56,21 +58,26 @@ public class TestActivity extends AppCompatActivity {
         if (cHealthComplication.getCheckedRadioButtonId() == R.id.yesButton) {
              cHealthCond = cHealthCondition.getText().toString();
         }
-        String cDiffBreathing = null;
+        String diffBreathing = null;
         String chestPain = null;
         String speechLoss = null;
+        String tasteLoss = null;
         String fever = null;
         String dryCough = null;
         String tiredness = null;
-        String status;
+        String soreThroat = null;
+        String recommendation;
         if (cBreathing.isChecked()) {
-             cDiffBreathing = getString(R.string.difficulty_in_breathing);
+             diffBreathing = getString(R.string.difficulty_in_breathing);
         }
         if (cChestPain.isChecked()) {
             chestPain = getString(R.string.chest_pain);
         }
         if (cSpeechLoss.isChecked()) {
             speechLoss = getString(R.string.speech_loss);
+        }
+        if (cTasteLoss.isChecked()) {
+            tasteLoss = getString(R.string.loss_of_taste);
         }
         if (cFever.isChecked()) {
             fever = getString(R.string.fever);
@@ -81,18 +88,32 @@ public class TestActivity extends AppCompatActivity {
         if (cTiredness.isChecked()) {
             tiredness = getString(R.string.tiredness);
         }
-        if ((cBreathing.isChecked() && cChestPain.isChecked() && cSpeechLoss.isChecked()
-        || (cBreathing.isChecked() && cChestPain.isChecked() && cFever.isChecked())
-        || (cDryCough.isChecked() && cFever.isChecked() && cChestPain.isChecked() ))) {
-            status = getString(R.string.positive);
-        } else if ((cTiredness.isChecked() && cDryCough.isChecked())
-        || (cTiredness.isChecked() && cFever.isChecked())) {
-            status = getString(R.string.likely_positive);
-        } else {
-            status = getString(R.string.negative);
+        if (cSoreThroat.isChecked()) {
+            soreThroat = getString(R.string.sore_throat);
         }
-        Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, cDiffBreathing,
-                chestPain, speechLoss, fever, dryCough, tiredness, status);
+        if ((cBreathing.isChecked() && cChestPain.isChecked() && cSpeechLoss.isChecked())
+        || (cBreathing.isChecked() && cChestPain.isChecked() && cFever.isChecked())
+        || (cDryCough.isChecked() && cFever.isChecked() && cChestPain.isChecked())
+        || (cSoreThroat.isChecked() && cFever.isChecked() && cBreathing.isChecked())
+        || (cTasteLoss.isChecked() && cChestPain.isChecked() && cFever.isChecked())
+        || (cTasteLoss.isChecked() && cSoreThroat.isChecked() && cBreathing.isChecked())
+        || (cSpeechLoss.isChecked() && cFever.isChecked() && cBreathing.isChecked())
+        || (cSpeechLoss.isChecked() && cSoreThroat.isChecked() && cDryCough.isChecked())) {
+            recommendation = getString(R.string.positive_recommendation);
+
+        } else if ((cTiredness.isChecked() && cDryCough.isChecked())
+        || (cTiredness.isChecked() && cFever.isChecked())
+        || (cFever.isChecked() && cSoreThroat.isChecked())
+        || (cFever.isChecked() && cSpeechLoss.isChecked())
+        || (cDryCough.isChecked() && cFever.isChecked())
+        || (cFever.isChecked() && cChestPain.isChecked())) {
+            recommendation = getString(R.string.less_likely_positive_recommend);
+
+        } else {
+            recommendation = getString(R.string.negative);
+        }
+        Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, diffBreathing,
+                chestPain, speechLoss, tasteLoss, fever, dryCough, tiredness, soreThroat, recommendation);
         cResultViewModel.insertResult(cResult);
         startActivity(new Intent(this, TestResults.class));
     }

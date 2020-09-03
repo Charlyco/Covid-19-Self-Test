@@ -76,4 +76,5 @@
     <string name="total_discharged">Discharged:  </string>
     <string name="total_deaths">Total Deaths:  </string>
     <string name="send_result">FORWARD RESULT TO NCDC</string>
+    <string name="take_test">Image button for navigating to Test Activity</string>
 </resources>

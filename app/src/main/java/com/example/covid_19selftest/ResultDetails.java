@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.covid_19selftest.data.Result;
@@ -22,6 +23,7 @@ public class ResultDetails extends Fragment {
     private ResultViewModel cResultViewModel;
     private TextView cUserName, cSymptom1, cSymptom2, cSymptom3, cSymptom4,
             cSymptom5, cSymptom6, cSymptom7, cSymptom8, cHealthCondition, cRecommendation;
+    private Button cForward;
 
        public static ResultDetails newInstance() {
         return new ResultDetails();
@@ -132,19 +134,14 @@ public class ResultDetails extends Fragment {
             cHealthCondition.setTextColor(Color.GREEN);
         } else {
             StringBuilder cHealthBuilder = new StringBuilder();
-            cHealthBuilder.append("You have the following health complication: ");
+            cHealthBuilder.append("Health complication: ");
             cHealthBuilder.append(result.getHealthCondition());
             cHealthCondition.setText(cHealthBuilder);
             cHealthCondition.setTextColor(Color.RED);
         }
         StringBuilder status = new StringBuilder();
-        status.append("Your probable Covid-19 status: ");
+        status.append("Recommendations: ");
         status.append(result.getRecommendation());
         cRecommendation.setText(status);
-        if (result.getRecommendation().equals("Most Likely Positive")) {
-            cRecommendation.setTextColor(Color.RED);
-        } else if (result.getRecommendation().equals("Likely Positive")) {
-            cRecommendation.setTextColor(Color.YELLOW);
-        } else cRecommendation.setTextColor(Color.GREEN);
     }
 }

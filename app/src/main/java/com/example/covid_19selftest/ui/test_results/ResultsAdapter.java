@@ -37,11 +37,6 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
             final Result currentResult = cResults.get(position);
             holder.patient_name.setText(currentResult.getName());
             holder.status.setText(currentResult.getRecommendation());
-            if (currentResult.getRecommendation().equals("Most Likely Positive")) {
-                holder.status.setTextColor(Color.RED);
-            } else if (currentResult.getRecommendation().equals("Likely Positive")) {
-                holder.status.setTextColor(Color.YELLOW);
-            } else holder.status.setTextColor(Color.GREEN);
         }
     }
 

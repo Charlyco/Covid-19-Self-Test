@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Result.class}, version = 2, exportSchema = false)
+@Database(entities = {Result.class}, version = 3, exportSchema = false)
 public abstract class ResultDataBase extends RoomDatabase {
     public abstract ResultDao cResultDao();
     public static final int NUMBER_OF_THREADS = 4;

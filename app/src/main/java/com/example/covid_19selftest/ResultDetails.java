@@ -3,6 +3,8 @@ package com.example.covid_19selftest;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -19,11 +21,16 @@ import android.widget.TextView;
 import com.example.covid_19selftest.data.Result;
 import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
+import java.util.Objects;
+
+
 public class ResultDetails extends Fragment {
+    private static final String RESULT_KEY = "assessment result details";
     private ResultViewModel cResultViewModel;
     private TextView cUserName, cSymptom1, cSymptom2, cSymptom3, cSymptom4,
             cSymptom5, cSymptom6, cSymptom7, cSymptom8, cHealthCondition, cRecommendation;
     private Button cForward;
+    private Result cResult;
 
        public static ResultDetails newInstance() {
         return new ResultDetails();
@@ -44,6 +51,7 @@ public class ResultDetails extends Fragment {
            cSymptom8 = root.findViewById(R.id.symptom8);
            cHealthCondition = root.findViewById(R.id.healthComplication);
            cRecommendation = root.findViewById(R.id.status_info);
+           cForward = root.findViewById(R.id.forwardButton);
         return root;
     }
 
@@ -54,9 +62,46 @@ public class ResultDetails extends Fragment {
         cResultViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<Result>() {
             @Override
             public void onChanged(Result result) {
+                cResult = result;
                setResultDetails(result);
             }
         });
+        cForward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                forwardToNcdc(cResult);
+            }
+        });
+    }
+
+    private void forwardToNcdc(Result result) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"theyoungeng1@gmail.com"});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "My Symptoms Report");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Please, below is a summary of the symptoms I" +
+                " am experiencing. This data is generated with the Covid-19 Self Assessment App. " +
+                "Please review the details and reply if I am a suitable candidate for Medical Test or not. " +
+                "Thanks. " + "\n" +
+                "Name: " + result.getName() + "\n" +
+                "State: " + result.getState() + "\n" +
+                "Date of birth: " + result.getDateOfBirth() + "\n" +
+                "\n" +
+                "I have the following Health Complications: " + result.getHealthCondition() + "\n" +
+                "Difficulty in breathing or shortness of breath: " + result.getBreathing() + "\n" +
+                "Chest pain or pressure: " + result.getChestPain() + "\n" +
+                "Loss of Speech or movement: " + result.getSpeechLoss() + "\n" +
+                "Loss of taste or smell senses: " + result.getTasteLoss() + "\n" +
+                "High Fever: " + result.getFever() + "\n" +
+                "Dry Cough: " + result.getDryCough() + "\n" +
+                "Tiredness or fatigue: " + result.getTiredness() + "\n" +
+                "Sore throat or runny nose: " + "\n" +
+                "\n" +
+                "Developer's Contact details: 07037590923");
+
+        Intent chooser = Intent.createChooser(emailIntent, "Select email app to send with");
+        if (emailIntent.resolveActivity(requireActivity().getPackageManager()) != null)
+            startActivity(chooser);
     }
 
     private void setResultDetails(Result result) {
@@ -144,4 +189,5 @@ public class ResultDetails extends Fragment {
         status.append(result.getRecommendation());
         cRecommendation.setText(status);
     }
+
 }

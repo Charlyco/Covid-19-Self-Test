@@ -8,8 +8,10 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 @Entity
-public class Result {
+public class Result implements Serializable {
     @PrimaryKey (autoGenerate = true)
     public int uid;
 

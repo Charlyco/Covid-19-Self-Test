@@ -68,28 +68,28 @@ public class TestActivity extends AppCompatActivity {
         String soreThroat = null;
         String recommendation;
         if (cBreathing.isChecked()) {
-             diffBreathing = getString(R.string.difficulty_in_breathing);
+             diffBreathing = "Yes";
         }
         if (cChestPain.isChecked()) {
-            chestPain = getString(R.string.chest_pain);
+            chestPain = "Yes";
         }
         if (cSpeechLoss.isChecked()) {
-            speechLoss = getString(R.string.speech_loss);
+            speechLoss = "Yes";
         }
         if (cTasteLoss.isChecked()) {
-            tasteLoss = getString(R.string.loss_of_taste);
+            tasteLoss ="Yes";
         }
         if (cFever.isChecked()) {
-            fever = getString(R.string.fever);
+            fever = "Yes";
         }
         if (cDryCough.isChecked()) {
-            dryCough = getString(R.string.dry_cough);
+            dryCough = "Yes";
         }
         if (cTiredness.isChecked()) {
-            tiredness = getString(R.string.tiredness);
+            tiredness = "Yes";
         }
         if (cSoreThroat.isChecked()) {
-            soreThroat = getString(R.string.sore_throat);
+            soreThroat = "Yes";
         }
         if ((cBreathing.isChecked() && cChestPain.isChecked() && cSpeechLoss.isChecked())
         || (cBreathing.isChecked() && cChestPain.isChecked() && cFever.isChecked())

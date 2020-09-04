@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class TestResults extends AppCompatActivity {
     Fragment cResultFragment;
@@ -19,4 +20,6 @@ public class TestResults extends AppCompatActivity {
         cResultFragment = TestResultsFragment.newInstance();
 
     }
+
+
 }

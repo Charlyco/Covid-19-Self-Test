@@ -28,12 +28,12 @@
     <string name="sore_throat">Sore throat or runny nose</string>
     <string name="end_note">Note: The symptoms listed above are the major symptoms we need for our
         assessment. It is limited and does not consist of all the possible symptoms associated with
-        Covid-19</string>
+        Covid-19.</string>
     <string name="submit_test">Submit Test</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
+    <string name="user_header">User Details</string>
     <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
@@ -52,13 +52,13 @@
     <string name="chest_pain">Chest Pain</string>
     <string name="speech_loss">Speech Loss</string>
         <string name="item_row_icon">item row icon</string>
-    <string name="positive_recommendation">Please we strongly recommend that you should consult the
-        NCDC immediately. Click the button below to forward your assessment result to the NCDC by clicking the button
-        "FORWARD RESULT TO NCDC" button below. for further action.</string>
+    <string name="positive_recommendation">We strongly recommend that you should consult the
+        NCDC immediately. You can forward your assessment result to the NCDC by clicking the
+        "FORWARD RESULT TO NCDC" button below, for further action.</string>
     <string name="positive">Most likely positive</string>
     <string name="less_likely_positive_recommend">Your symptoms seems to be less serious but we do
         recommend that you contact the nearest medical facility nearest to you medical test. You can
-        as well forward your assessment result to the NCDC by clicking the button "FORWARD RESULT TO
+        as well forward your assessment result to the NCDC by clicking the "FORWARD RESULT TO
         NCDC" button below.</string>
     <string name="likely_positive">Likely Positive</string>
     <string name="negative">Likely Negative</string>

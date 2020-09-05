@@ -57,9 +57,9 @@
         "FORWARD RESULT TO NCDC" button below, for further action.</string>
     <string name="positive">Most likely positive</string>
     <string name="less_likely_positive_recommend">Your symptoms seems to be less serious but we do
-        recommend that you contact the nearest medical facility nearest to you medical test. You can
-        as well forward your assessment result to the NCDC by clicking the "FORWARD RESULT TO
-        NCDC" button below.</string>
+        recommend that you contact the nearest medical facility for medical test. You can
+        as well forward your assessment result to the NCDC by clicking the \"FORWARD RESULT TO
+        NCDC\" button below.</string>
     <string name="likely_positive">Likely Positive</string>
     <string name="negative">Likely Negative</string>
     <string name="negative_recommendation">You don\'t seem to have a enough symptoms that could suggest having COVID-19.

@@ -4,7 +4,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -21,12 +20,8 @@ import android.widget.TextView;
 import com.example.covid_19selftest.data.Result;
 import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
-import java.util.Objects;
-
-
 public class ResultDetails extends Fragment {
     private static final String RESULT_KEY = "assessment result details";
-    private ResultViewModel cResultViewModel;
     private TextView cUserName, cSymptom1, cSymptom2, cSymptom3, cSymptom4,
             cSymptom5, cSymptom6, cSymptom7, cSymptom8, cHealthCondition, cRecommendation;
     private Button cForward;
@@ -58,7 +53,7 @@ public class ResultDetails extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        cResultViewModel = new ViewModelProvider(requireActivity()).get(ResultViewModel.class);
+        ResultViewModel cResultViewModel = new ViewModelProvider(requireActivity()).get(ResultViewModel.class);
         cResultViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<Result>() {
             @Override
             public void onChanged(Result result) {
@@ -82,19 +77,19 @@ public class ResultDetails extends Fragment {
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Please, below is a summary of the symptoms I" +
                 " am experiencing. This data is generated with the Covid-19 Self Assessment App. " +
                 "Please review the details and reply if I am a suitable candidate for Medical Test or not. " +
-                "Thanks. " + "\n" +
+                "Thanks. " + "\n" + "\n" +
                 "Name: " + result.getName() + "\n" +
                 "State: " + result.getState() + "\n" +
                 "Date of birth: " + result.getDateOfBirth() + "\n" +
                 "\n" +
-                "I have the following Health Complications: " + result.getHealthCondition() + "\n" +
-                "Difficulty in breathing or shortness of breath: " + result.getBreathing() + "\n" +
-                "Chest pain or pressure: " + result.getChestPain() + "\n" +
-                "Loss of Speech or movement: " + result.getSpeechLoss() + "\n" +
-                "Loss of taste or smell senses: " + result.getTasteLoss() + "\n" +
-                "High Fever: " + result.getFever() + "\n" +
-                "Dry Cough: " + result.getDryCough() + "\n" +
-                "Tiredness or fatigue: " + result.getTiredness() + "\n" +
+                "I have the following Health Complications: " + result.getHealthCondition() + "\n" + "\n" +
+                "Difficulty in breathing or shortness of breath: " + result.getBreathing() + "\n" + "\n" +
+                "Chest pain or pressure: " + result.getChestPain() + "\n" + "\n" +
+                "Loss of Speech or movement: " + result.getSpeechLoss() + "\n" + "\n" +
+                "Loss of taste or smell senses: " + result.getTasteLoss() + "\n" + "\n" +
+                "High Fever: " + result.getFever() + "\n" + "\n" +
+                "Dry Cough: " + result.getDryCough() + "\n" + "\n" +
+                "Tiredness or fatigue: " + result.getTiredness() + "\n" + "\n" +
                 "Sore throat or runny nose: " + "\n" +
                 "\n" +
                 "Developer's Contact details: 07037590923");

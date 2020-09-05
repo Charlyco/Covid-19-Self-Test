@@ -116,5 +116,6 @@ public class TestActivity extends AppCompatActivity {
                 chestPain, speechLoss, tasteLoss, fever, dryCough, tiredness, soreThroat, recommendation);
         cResultViewModel.insertResult(cResult);
         startActivity(new Intent(this, TestResults.class));
+        finish();
     }
 }

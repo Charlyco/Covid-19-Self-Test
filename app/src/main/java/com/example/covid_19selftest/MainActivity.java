@@ -2,6 +2,7 @@ package com.example.covid_19selftest;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
+
+        Toolbar cToolbar = findViewById(R.id.toolbarMain);
+        setSupportActionBar(cToolbar);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, TestResults.class));
     }
 
-    public void viewWhoStats(View view) {
+    public void viewNcdcStats(View view) {
         startActivity(new Intent(this, Covid_19_stat.class));
     }
 }

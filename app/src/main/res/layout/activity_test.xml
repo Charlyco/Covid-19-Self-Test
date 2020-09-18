@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -46,6 +46,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:autofillHints=""
+                android:drawableStart="@drawable/name_icon"
+                android:drawablePadding="4dp"
                 android:ems="10"
                 android:fontFamily="@font/playfair_display"
                 android:hint="@string/name"
@@ -62,6 +64,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:autofillHints=""
+                android:drawableStart="@drawable/icon_date"
                 android:ems="10"
                 android:fontFamily="@font/playfair_display"
                 android:hint="@string/date_of_birth"
@@ -69,6 +72,7 @@
 
             <Spinner
                 android:id="@+id/stateSpinner"
+                style="@style/spinerStyles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -76,6 +80,7 @@
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@string/states"
                 android:entries="@array/state_entries"
+                android:scrollbars="vertical"
                 android:spinnerMode="dropdown" />
 
             <TextView
@@ -134,10 +139,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:autofillHints=""
+                android:drawableStart="@drawable/sickness"
+                android:drawablePadding="4dp"
                 android:ems="10"
                 android:fontFamily="@font/playfair_display"
                 android:hint="@string/health"
-                android:inputType="textPersonName" />
+                android:inputType="textAutoCorrect|text" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -146,6 +153,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/playfair_display_bold"
                 android:text="@string/symptoms"
                 android:textColor="@color/app_blue2"
                 android:textSize="16sp" />
@@ -233,9 +241,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/rounded_btn_red"
+                android:drawableStart="@drawable/submit_icon"
+                android:drawableEnd="@drawable/submit_icon"
                 android:fontFamily="@font/playfair_display_bold"
                 android:onClick="submitTest"
+                android:paddingStart="@dimen/button_padding"
+                android:paddingEnd="@dimen/button_padding"
                 android:text="@string/submit_test"
+                android:textAlignment="center"
                 android:textColor="@color/app_color3"
                 android:textSize="18sp"
                 android:textStyle="bold"

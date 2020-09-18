@@ -31,8 +31,6 @@ import java.util.List;
 public class TestResultsFragment extends Fragment implements OnItemClickedListener {
     private ResultViewModel cResultViewModel;
     private ResultsAdapter cResultsAdapter;
-    private RecyclerView cRecyclerView;
-    private Result cResult;
 
     public static TestResultsFragment newInstance() {
         return new TestResultsFragment();
@@ -44,7 +42,7 @@ public class TestResultsFragment extends Fragment implements OnItemClickedListen
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.result_fragment, container, false);
         cResultsAdapter = new ResultsAdapter(getContext());
-        cRecyclerView = root.findViewById(R.id.resultsRecyclerView);
+        RecyclerView cRecyclerView = root.findViewById(R.id.resultsRecyclerView);
         cRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         cRecyclerView.setAdapter(cResultsAdapter);
         cResultsAdapter.setClickedListener(this);
@@ -111,7 +109,7 @@ public class TestResultsFragment extends Fragment implements OnItemClickedListen
 
     @Override
     public void onClick(View view, int position) {
-        cResult = cResultsAdapter.getResultAtPosition(position);
+        Result cResult = cResultsAdapter.getResultAtPosition(position);
         cResultViewModel.selectResult(cResult);
         launchResultDetails(view);
     }

@@ -1,6 +1,7 @@
 package com.example.covid_19selftest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,13 +33,16 @@ public class Covid_19_stat extends AppCompatActivity {
     private TextView dischargedCases;
     private TextView deaths;
     private RecyclerView cStatesRecyclerView;
-    private StatisticsAdapter cAdapter;
     private ProgressBar cProgressBar;
+    private TextView cBreakdownByStates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+
+        Toolbar cToolbar = findViewById(R.id.statisticsToolbar);
+        setSupportActionBar(cToolbar);
 
         cProgressBar = findViewById(R.id.progressBar);
         totalSamples = findViewById(R.id.totalSamplesState);
@@ -46,9 +50,16 @@ public class Covid_19_stat extends AppCompatActivity {
         activeCases = findViewById(R.id.activeCases);
         dischargedCases = findViewById(R.id.discharged);
         deaths = findViewById(R.id.deaths);
+        cBreakdownByStates = findViewById(R.id.breakdown);
         cStatesRecyclerView = findViewById(R.id.statesRecyclerView);
 
         cProgressBar.setVisibility(View.VISIBLE);
+        totalSamples.setVisibility(View.INVISIBLE);
+        totalConfirmed.setVisibility(View.INVISIBLE);
+        activeCases.setVisibility(View.INVISIBLE);
+        dischargedCases.setVisibility(View.INVISIBLE);
+        deaths.setVisibility(View.INVISIBLE);
+        cBreakdownByStates.setVisibility(View.INVISIBLE);
         ApiService taskService = ServiceBuilder.buildService(ApiService.class);
         Call<Api> call = taskService.getApi();
 
@@ -60,6 +71,12 @@ public class Covid_19_stat extends AppCompatActivity {
                     Data cData = response.body().getData();
                     List<State> cStates = response.body().getData().getStates();
                     displayStates(cStates);
+                    totalSamples.setVisibility(View.VISIBLE);
+                    totalConfirmed.setVisibility(View.VISIBLE);
+                    activeCases.setVisibility(View.VISIBLE);
+                    dischargedCases.setVisibility(View.VISIBLE);
+                    deaths.setVisibility(View.VISIBLE);
+                    cBreakdownByStates.setVisibility(View.VISIBLE);
                     setTotalValues(cData);
                 } else Log.d("Response: ", "Nothing returned");
                 cProgressBar.setVisibility(View.INVISIBLE);
@@ -75,7 +92,7 @@ public class Covid_19_stat extends AppCompatActivity {
     }
 
     private void displayStates(List<State> states) {
-        cAdapter = new StatisticsAdapter(states, this);
+        StatisticsAdapter cAdapter = new StatisticsAdapter(states, this);
         cStatesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         cStatesRecyclerView.setAdapter(cAdapter);
     }

@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        Toolbar cToolbar = findViewById(R.id.toolbarMain);
-        setSupportActionBar(cToolbar);
-
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -44,19 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 cAdView.setVisibility(View.VISIBLE);
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = new MenuInflater(this);
-        inflater.inflate(R.menu.menu_main_activity, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(this, SettingsActivity.class));
-        return super.onOptionsItemSelected(item);
     }
 
     public void launchTest(View view) {

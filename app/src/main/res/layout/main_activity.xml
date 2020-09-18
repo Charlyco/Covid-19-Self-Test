@@ -8,18 +8,6 @@
     android:background="@drawable/covid192"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMain"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/app_blue2"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/white" />
-
     <TextView
         android:id="@+id/textViewMain"
         style="@android:style/Widget.TextView"
@@ -29,6 +17,8 @@
         android:layout_marginEnd="16dp"
         android:background="@color/app_blue2"
         android:fontFamily="@font/playfair_display_bold"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
         android:text="@string/headline"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -38,7 +28,7 @@
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/takeTestButton"
@@ -47,11 +37,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_img_btn"
         android:contentDescription="@string/take_test"
         android:onClick="launchTest"
         android:padding="4dp"
-        android:src="@drawable/lab_testing"
+        android:src="@drawable/take_test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMain" />
@@ -65,8 +54,13 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_btn"
+        android:drawableStart="@drawable/health_records"
+        android:drawableEnd="@drawable/health_records"
+        android:drawablePadding="4dp"
         android:fontFamily="@font/playfair_display_bold"
         android:onClick="launchTestRecords"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:text="@string/test_record_btn"
         android:textColor="@color/app_color3"
         android:textSize="18sp"
@@ -82,8 +76,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_btn"
+        android:drawableStart="@drawable/statistics_icon"
+        android:drawableEnd="@drawable/statistics_icon"
+        android:drawablePadding="4dp"
         android:fontFamily="@font/playfair_display_bold"
         android:onClick="viewNcdcStats"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:text="@string/online_statistics"
         android:textColor="@color/app_color3"
         android:textSize="18sp"

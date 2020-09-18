@@ -32,10 +32,6 @@
         </activity>
 
         <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
-
-        <activity
             android:name=".TestActivity"
             android:label="Take The Test"/>
 

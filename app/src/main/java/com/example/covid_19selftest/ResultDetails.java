@@ -21,7 +21,6 @@ import com.example.covid_19selftest.data.Result;
 import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
 public class ResultDetails extends Fragment {
-    private static final String RESULT_KEY = "assessment result details";
     private TextView cUserName, cSymptom1, cSymptom2, cSymptom3, cSymptom4,
             cSymptom5, cSymptom6, cSymptom7, cSymptom8, cHealthCondition, cRecommendation;
     private Button cForward;
@@ -72,7 +71,7 @@ public class ResultDetails extends Fragment {
     private void forwardToNcdc(Result result) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"theyoungeng1@gmail.com"});
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"info@ncdc.gov.ng"});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "My Symptoms Report");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Please, below is a summary of the symptoms I" +
                 " am experiencing. This data is generated with the Covid-19 Self Assessment App. " +

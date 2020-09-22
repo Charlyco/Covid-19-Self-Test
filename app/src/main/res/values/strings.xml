@@ -77,4 +77,7 @@
     <string name="total_deaths">Total Deaths:  </string>
     <string name="send_result">FORWARD RESULT TO NCDC</string>
     <string name="take_test">Image button for navigating to Test Activity</string>
+    <string name="follow_us_on_twitter">Follow us on Twitter</string>
+    <string name="like_us_on_facebook">Like us on Facebook</string>
+    <string name="follow_us_on_linkedin">Follow us on LinkedIn</string>
 </resources>

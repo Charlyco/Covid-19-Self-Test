@@ -105,4 +105,8 @@ public class Result implements Serializable {
     public String getRecommendation() {
         return recommendation;
     }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }

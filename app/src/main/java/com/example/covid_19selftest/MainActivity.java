@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openLinkedin(PackageManager packageManager2, String myId) {
-        String urlLn="https://www.linkedin.com/" + myId;
+        String urlLn="https://www.linkedin.com/in/" + myId;
         try {
             packageManager2.getPackageInfo("com.linkedin.android", 0);
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://" + myId)));

@@ -91,7 +91,7 @@ public class ResultDetails extends Fragment {
                 "Tiredness or fatigue: " + result.getTiredness() + "\n" + "\n" +
                 "Sore throat or runny nose: " + "\n" +
                 "\n" +
-                "Developer's Contact details: 07037590923");
+                "Thanks in anticipation of your prompt response");
 
         Intent chooser = Intent.createChooser(emailIntent, "Select email app to send with");
         if (emailIntent.resolveActivity(requireActivity().getPackageManager()) != null)

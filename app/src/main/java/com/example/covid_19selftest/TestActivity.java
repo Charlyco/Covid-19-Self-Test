@@ -1,13 +1,16 @@
 package com.example.covid_19selftest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -15,8 +18,9 @@ import android.widget.Spinner;
 import com.example.covid_19selftest.data.Result;
 import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
-public class TestActivity extends AppCompatActivity {
-    private EditText cName, cDateOfBirth, cHealthCondition;
+public class TestActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    private EditText cName, cHealthCondition;
+    public EditText cDateOfBirth;
     private RadioGroup cHealthComplication;
     private Spinner cStateSpinner;
     private CheckBox cBreathing, cDryCough, cSpeechLoss, cTasteLoss, cFever, cChestPain, cTiredness, cSoreThroat;
@@ -47,9 +51,22 @@ public class TestActivity extends AppCompatActivity {
         cTiredness = findViewById(R.id.tirednessCheckBox);
         cSoreThroat = findViewById(R.id.soreThroatCheckBox);
         cHealthComplication = findViewById(R.id.healthComplication);
+
+        cDateOfBirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment cDialogFragment = new DatePickerFragment();
+                cDialogFragment.show(getSupportFragmentManager(), "datePicker");
+            }
+        });
     }
-/* the submitTest method still needs to be modified to include the use of health complication
-   to determine status */
+
+    public void setDateOfBirth(String dateOfBirth) {
+        cDateOfBirth.setText(dateOfBirth);
+    }
+
+    /* the submitTest method still needs to be modified to include the use of health complication
+       to determine status */
     public void submitTest(View view) {
         String cPatientName = cName.getText().toString();
         String cDoB = cDateOfBirth.getText().toString();
@@ -117,5 +134,15 @@ public class TestActivity extends AppCompatActivity {
         cResultViewModel.insertResult(cResult);
         startActivity(new Intent(this, TestResults.class));
         finish();
+    }
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+        String cDate = i2 +
+                "/" +
+                i1 +
+                "/" +
+                i;
+        cDateOfBirth.setText(cDate);
     }
 }

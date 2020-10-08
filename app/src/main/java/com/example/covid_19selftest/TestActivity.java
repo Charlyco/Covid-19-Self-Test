@@ -52,6 +52,7 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
         cSoreThroat = findViewById(R.id.soreThroatCheckBox);
         cHealthComplication = findViewById(R.id.healthComplication);
 
+        cDateOfBirth.setInputType(0);
         cDateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,10 +60,6 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
                 cDialogFragment.show(getSupportFragmentManager(), "datePicker");
             }
         });
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        cDateOfBirth.setText(dateOfBirth);
     }
 
     /* the submitTest method still needs to be modified to include the use of health complication
@@ -144,5 +141,6 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
                 "/" +
                 i;
         cDateOfBirth.setText(cDate);
+        cDateOfBirth.setInputType(1);
     }
 }

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestActivity">
+    android:clickable="true"
+    tools:context=".TestActivity"
+    android:focusable="true">
 
     <ScrollView
         android:layout_width="0dp"
@@ -64,10 +66,13 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:autofillHints=""
+                android:clickable="true"
                 android:drawableStart="@drawable/icon_date"
                 android:ems="10"
+                android:focusable="true"
                 android:fontFamily="@font/playfair_display"
-                android:hint="@string/date_of_birth" />
+                android:hint="@string/date_of_birth"
+                android:inputType="date" />
 
             <Spinner
                 android:id="@+id/stateSpinner"

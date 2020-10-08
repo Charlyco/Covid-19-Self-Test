@@ -114,4 +114,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/app_blue2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

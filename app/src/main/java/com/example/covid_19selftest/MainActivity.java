@@ -77,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
                 PackageManager cPackageManager2 = getPackageManager();
                 openLinkedin(cPackageManager2, myId);
                 return true;
+            case R.id.about:
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+            case R.id.privacy:
+                startActivity(new Intent(this, PrivacyPolicyActivity.class));
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

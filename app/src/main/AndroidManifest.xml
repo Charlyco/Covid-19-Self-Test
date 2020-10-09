@@ -12,8 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".PrivacyPolicyActivity"></activity>
-        <activity android:name=".AboutActivity" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:label="Privacy Policy"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="About Us"
+            android:parentActivityName=".MainActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

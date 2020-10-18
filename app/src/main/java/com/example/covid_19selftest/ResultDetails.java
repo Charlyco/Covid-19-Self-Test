@@ -76,21 +76,22 @@ public class ResultDetails extends Fragment {
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Please, below is a summary of the symptoms I" +
                 " am experiencing. This data is generated with the Covid-19 Self Assessment App. " +
                 "Please review the details and reply if I am a suitable candidate for Medical Test or not. " +
-                "Thanks. " + "\n" + "\n" +
+                "Thanks. " + "\n\n" +
+                "\bMY DETAILS" + "\n\n" +
                 "Name: " + result.getName() + "\n" +
-                "State: " + result.getState() + "\n" +
+                "State of residence: " + result.getState() + "\n" +
                 "Date of birth: " + result.getDateOfBirth() + "\n" +
                 "\n" +
-                "I have the following Health Complications: " + result.getHealthCondition() + "\n" + "\n" +
-                "Difficulty in breathing or shortness of breath: " + result.getBreathing() + "\n" + "\n" +
-                "Chest pain or pressure: " + result.getChestPain() + "\n" + "\n" +
-                "Loss of Speech or movement: " + result.getSpeechLoss() + "\n" + "\n" +
-                "Loss of taste or smell senses: " + result.getTasteLoss() + "\n" + "\n" +
-                "High Fever: " + result.getFever() + "\n" + "\n" +
-                "Dry Cough: " + result.getDryCough() + "\n" + "\n" +
-                "Tiredness or fatigue: " + result.getTiredness() + "\n" + "\n" +
-                "Sore throat or runny nose: " + "\n" +
-                "\n" +
+                "Other Health Complications: " + result.getHealthCondition() + "\n\n" +
+                "\bMY SYMPTOMS:\n\n" +
+                "Difficulty in breathing or shortness of breath: " + result.getBreathing() + "\n\n" +
+                "Chest pain or pressure: " + result.getChestPain() + "\n\n" +
+                "Loss of Speech or movement: " + result.getSpeechLoss() + "\n\n" +
+                "Loss of taste or smell senses: " + result.getTasteLoss() + "\n\n" +
+                "High Fever: " + result.getFever() + "\n\n" +
+                "Dry Cough: " + result.getDryCough() + "\n\n" +
+                "Tiredness or fatigue: " + result.getTiredness() + "\n\n" +
+                "Sore throat or runny nose: " +result.getSoreThroat() + "\n\n" +
                 "Thanks in anticipation of your prompt response");
 
         Intent chooser = Intent.createChooser(emailIntent, "Select email app to send with");
@@ -106,7 +107,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getBreathing() == null) {
             cSymptom1.setText(R.string.no);
-            cSymptom1.setTextColor(Color.GREEN);
+            cSymptom1.setTextColor(Color.BLUE);
         }else {
             cSymptom1.setText(R.string.yes);
             cSymptom1.setTextColor(Color.RED);
@@ -114,7 +115,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getChestPain() == null) {
             cSymptom2.setText(R.string.no);
-            cSymptom2.setTextColor(Color.GREEN);
+            cSymptom2.setTextColor(Color.BLUE);
         } else {
             cSymptom2.setText(R.string.yes);
             cSymptom2.setTextColor(Color.RED);
@@ -122,7 +123,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getSpeechLoss() == null) {
             cSymptom3.setText(R.string.no);
-            cSymptom3.setTextColor(Color.GREEN);
+            cSymptom3.setTextColor(Color.BLUE);
         } else {
             cSymptom3.setText(R.string.yes);
             cSymptom3.setTextColor(Color.RED);
@@ -130,7 +131,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getTasteLoss() == null) {
             cSymptom4.setText("No");
-            cSymptom4.setTextColor(Color.GREEN);
+            cSymptom4.setTextColor(Color.BLUE);
         } else {
             cSymptom4.setText("Yes");
             cSymptom4.setTextColor(Color.RED);
@@ -138,7 +139,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getFever() == null) {
             cSymptom5.setText(R.string.no);
-            cSymptom5.setTextColor(Color.GREEN);
+            cSymptom5.setTextColor(Color.BLUE);
         } else {
             cSymptom5.setText(R.string.yes);
             cSymptom5.setTextColor(Color.RED);
@@ -146,7 +147,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getDryCough() == null) {
             cSymptom6.setText(R.string.no);
-            cSymptom6.setTextColor(Color.GREEN);
+            cSymptom6.setTextColor(Color.BLUE);
         } else {
             cSymptom6.setText(R.string.yes);
             cSymptom6.setTextColor(Color.RED);
@@ -154,7 +155,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getTiredness() == null) {
             cSymptom7.setText(R.string.no);
-            cSymptom7.setTextColor(Color.GREEN);
+            cSymptom7.setTextColor(Color.BLUE);
         } else {
             cSymptom7.setText(R.string.yes);
             cSymptom7.setTextColor(Color.RED);
@@ -162,7 +163,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getSoreThroat() == null) {
             cSymptom8.setText(R.string.no);
-            cSymptom8.setTextColor(Color.GREEN);
+            cSymptom8.setTextColor(Color.BLUE);
         } else {
             cSymptom8.setText(R.string.yes);
             cSymptom8.setTextColor(Color.RED);
@@ -170,7 +171,7 @@ public class ResultDetails extends Fragment {
 
         if (result.getHealthCondition() == null){
             cHealthCondition.setText(R.string.no);
-            cHealthCondition.setTextColor(Color.GREEN);
+            cHealthCondition.setTextColor(Color.BLUE);
         } else {
             StringBuilder cHealthBuilder = new StringBuilder();
             cHealthBuilder.append("Health complication: ");

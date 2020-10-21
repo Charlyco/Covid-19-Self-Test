@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 PackageManager cPackageManager = getPackageManager();
                 openFaceBookIntent(cPackageManager, pageId);
                 return true;
-            case R.id.linkedIn:
-                String myId = "limitlessb4a7b9145";
-                PackageManager cPackageManager2 = getPackageManager();
-                openLinkedin(cPackageManager2, myId);
-                return true;
+//            case R.id.linkedIn:
+//                String myId = "limitlessb4a7b9145";
+//                PackageManager cPackageManager2 = getPackageManager();
+//                openLinkedin(cPackageManager2, myId);
+//                return true;
             case R.id.about:
                 startActivity(new Intent(this, AboutActivity.class));
                 return true;
@@ -89,15 +89,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void openLinkedin(PackageManager packageManager2, String myId) {
-        String urlLn="https://www.linkedin.com/in/" + myId;
-        try {
-            packageManager2.getPackageInfo("com.linkedin.android", 0);
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://" + myId)));
-        } catch (PackageManager.NameNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlLn) ));
-        }
-    }
+//    private void openLinkedin(PackageManager packageManager2, String myId) {
+//        String urlLn="https://www.linkedin.com/in/" + myId;
+//        try {
+//            packageManager2.getPackageInfo("com.linkedin.android", 0);
+//            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://" + myId)));
+//        } catch (PackageManager.NameNotFoundException e) {
+//            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlLn) ));
+//        }
+//    }
 
     private void openTwitter(PackageManager packageManager1, String userId) {
         try {

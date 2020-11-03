@@ -72,7 +72,7 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_btn"
         android:drawableStart="@drawable/statistics_icon"
         android:drawableEnd="@drawable/statistics_icon"
@@ -85,7 +85,7 @@
         android:textColor="@color/app_color3"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adViewMain"
         app:layout_constraintEnd_toEndOf="@+id/pastRecordBtn"
         app:layout_constraintStart_toStartOf="@+id/pastRecordBtn" />
 
@@ -93,13 +93,13 @@
         android:id="@+id/adViewMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:visibility="gone"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toTopOf="@+id/pastRecordBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_main"

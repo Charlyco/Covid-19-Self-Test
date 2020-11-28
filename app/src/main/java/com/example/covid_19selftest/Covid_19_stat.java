@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,13 +29,19 @@ import retrofit2.Response;
 
 public class Covid_19_stat extends AppCompatActivity {
     private TextView totalSamples;
+    private TextView totalSamplesValue;
     private TextView totalConfirmed;
+    private TextView totalConfirmedValue;
     private TextView activeCases;
+    private TextView activeCasesValue;
     private TextView dischargedCases;
+    private TextView dischargedCasesValue;
     private TextView deaths;
+    private TextView totalDeathsValue;
     private RecyclerView cStatesRecyclerView;
     private ProgressBar cProgressBar;
     private TextView cBreakdownByStates;
+    private LinearLayout totalTitleLayout, totalValuesLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,21 +51,25 @@ public class Covid_19_stat extends AppCompatActivity {
         Toolbar cToolbar = findViewById(R.id.statisticsToolbar);
         setSupportActionBar(cToolbar);
 
+        totalTitleLayout = findViewById(R.id.linearLayout_total);
+        totalValuesLayout = findViewById(R.id.total_values_layout);
         cProgressBar = findViewById(R.id.progressBar);
         totalSamples = findViewById(R.id.totalSamplesState);
         totalConfirmed = findViewById(R.id.totalConfirmedCases);
         activeCases = findViewById(R.id.activeCases);
         dischargedCases = findViewById(R.id.discharged);
         deaths = findViewById(R.id.deaths);
+
+        totalSamplesValue = findViewById(R.id.samplesValue);
+        totalConfirmedValue = findViewById(R.id.confirmed_cases_value);
+        activeCasesValue = findViewById(R.id.activeCasesValue);
+        dischargedCasesValue = findViewById(R.id.dischargedCasesValue);
+        totalDeathsValue = findViewById(R.id.totalDeathsValue);
+
         cBreakdownByStates = findViewById(R.id.breakdown);
         cStatesRecyclerView = findViewById(R.id.statesRecyclerView);
 
         cProgressBar.setVisibility(View.VISIBLE);
-        totalSamples.setVisibility(View.INVISIBLE);
-        totalConfirmed.setVisibility(View.INVISIBLE);
-        activeCases.setVisibility(View.INVISIBLE);
-        dischargedCases.setVisibility(View.INVISIBLE);
-        deaths.setVisibility(View.INVISIBLE);
         cBreakdownByStates.setVisibility(View.INVISIBLE);
         ApiService taskService = ServiceBuilder.buildService(ApiService.class);
         Call<Api> call = taskService.getApi();
@@ -71,11 +82,8 @@ public class Covid_19_stat extends AppCompatActivity {
                     Data cData = response.body().getData();
                     List<State> cStates = response.body().getData().getStates();
                     displayStates(cStates);
-                    totalSamples.setVisibility(View.VISIBLE);
-                    totalConfirmed.setVisibility(View.VISIBLE);
-                    activeCases.setVisibility(View.VISIBLE);
-                    dischargedCases.setVisibility(View.VISIBLE);
-                    deaths.setVisibility(View.VISIBLE);
+                    totalTitleLayout.setVisibility(View.VISIBLE);
+                    totalValuesLayout.setVisibility(View.VISIBLE);
                     cBreakdownByStates.setVisibility(View.VISIBLE);
                     setTotalValues(cData);
                 } else Log.d("Response: ", "Nothing returned");
@@ -88,7 +96,6 @@ public class Covid_19_stat extends AppCompatActivity {
                 cProgressBar.setVisibility(View.INVISIBLE);
             }
         });
-
     }
 
     private void displayStates(List<State> states) {
@@ -98,29 +105,19 @@ public class Covid_19_stat extends AppCompatActivity {
     }
 
     private void setTotalValues(Data data) {
-        StringBuilder samplesBuilder = new StringBuilder();
-        samplesBuilder.append("Total Samples Tested:  ");
-        samplesBuilder.append(data.getTotalSamplesTested());
-        totalSamples.setText(samplesBuilder);
+        totalSamples.setText(R.string.total_samples);
+        totalSamplesValue.setText((data.getTotalSamplesTested()));
 
-        StringBuilder confirmedCasesBuilder = new StringBuilder();
-        confirmedCasesBuilder.append("Total Confirmed Cases:  ");
-        confirmedCasesBuilder.append(data.getTotalConfirmedCases());
-        totalConfirmed.setText(confirmedCasesBuilder);
+        totalConfirmed.setText(R.string.total_confirmed);
+        totalConfirmedValue.setText(data.getTotalConfirmedCases().toString());
 
-        StringBuilder activeCasesBuilder = new StringBuilder();
-        activeCasesBuilder.append("Total Active Cases:  ");
-        activeCasesBuilder.append(data.getTotalActiveCases());
-        activeCases.setText(activeCasesBuilder);
+        activeCases.setText(R.string.active_cases);
+        activeCasesValue.setText(data.getTotalActiveCases().toString());
 
-        StringBuilder dischargedBuilder = new StringBuilder();
-        dischargedBuilder.append("Discharged:  ");
-        dischargedBuilder.append(data.getDischarged());
-        dischargedCases.setText(dischargedBuilder);
+        dischargedCases.setText(R.string.total_discharged);
+        dischargedCasesValue.setText(data.getDischarged().toString());
 
-        StringBuilder deathsBuilder = new StringBuilder();
-        deathsBuilder.append("Total Deaths:  ");
-        deathsBuilder.append(data.getDeath());
-        deaths.setText(deathsBuilder);
+        deaths.setText(R.string.total_deaths);
+        totalDeathsValue.setText(data.getDeath().toString());
     }
 }

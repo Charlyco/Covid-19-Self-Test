@@ -12,68 +12,145 @@
         app:cardElevation="4dp">
 
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/stateName"
-                android:layout_width="match_parent"
+                android:id="@+id/state_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/playfair_display_bold"
-                android:textAlignment="center"
                 android:textColor="@color/app_blue2"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="Name of State" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/state_name" />
 
-            <TextView
-                android:id="@+id/totalConfirmedState"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+            <LinearLayout
+                android:id="@+id/state_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/playfair_display"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                tools:text="Confirmed Cases" />
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/state_name">
 
-            <TextView
-                android:id="@+id/totalActiveState"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/playfair_display"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                tools:text="Active Cases" />
+                <TextView
+                    android:id="@+id/totalConfirmedState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="Confirmed Cases" />
 
-            <TextView
-                android:id="@+id/totalDischargedState"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/playfair_display"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                tools:text="Discharged" />
+                <TextView
+                    android:id="@+id/totalActiveState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="Active Cases" />
 
-            <TextView
-                android:id="@+id/totalDeathsState"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/playfair_display"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                tools:text="Total Deaths" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/totalDischargedState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="Discharged" />
 
+                <TextView
+                    android:id="@+id/totalDeathsState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="Total Deaths" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/state_titles"
+                app:layout_constraintTop_toTopOf="@+id/state_titles">
+
+                <TextView
+                    android:id="@+id/totalConfirmedStateValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="@string/zero" />
+
+                <TextView
+                    android:id="@+id/totalActiveStateValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="@string/zero" />
+
+                <TextView
+                    android:id="@+id/totalDischargedStateValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="@string/zero" />
+
+                <TextView
+                    android:id="@+id/totalDeathsStateValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="@string/zero" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Covid-19 Self Test</string>
     <string name="headline">Help Stop The Spread of Covid-19.\n Get Yourself Tested Today</string>
-    <string name="test_record_btn">VIEW YOUR PAST TEST RECORDS</string>
-    <string name="online_statistics">VIEW CURRENT NCDC STATISTICS</string>
+    <string name="test_record_btn">PAST TEST RECORDS</string>
+    <string name="online_statistics">CURRENT NCDC STATISTICS</string>
     <string name="hello">Welcome! Take a few minutes to answer a few questions to help us determine
         your possible Covid-19 status. Please note that the result produced is only a symptom analysis
         result based on the answers you provided and does not satisfactorily determine your Covid-19 status.
@@ -126,18 +126,14 @@
         Phone: +2347037590923 </string>
 
     <string name="about_us_writup">
-        Charlyco Technologies offers versatile range of services in the
-        Information Technology Sector. \n
-        The services we offer include but not limited to the following:\n
-        1.\tMobile Application development\n
-        2.\tWeb Application development\n
-        3.\tComputer Networking (LAN)\n
-        4.\tComputer Repairs and Maintenance \n
-        5.\tCCTV installation\n
-        6.\tThermal Printer repairs\n
-        7.\tGeneral IT consultancy.\n\n
-        We are unbeatable in the level of professionalism we exhibit in our service delivery and customer relationship.\n \n
-        Contact info: Lucy Lodge, first floor, Umuerim Nekede Owerri, Imo State.\n
-        Email: charlyco84@yahoo.com\n
+        The community made me and I am glad to give back to the community.\n\n
+        This mobile application is built as my contribution to the Andela Community Projects for the
+        2020 Google Africa Developer Scholarship program.\n\n
+        I am forever grateful to Andela Learning Community, Google Africa and Pluralsight for the
+        opportunity to develop a career out of my passion.\n\n
+
+        Email: theyoungeng1@gmail.com\n
         Phone: +2347037590923 </string>
+    <string name="zero">000</string>
+    <string name="state_name">Name of State</string>
 </resources>

@@ -46,42 +46,38 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.St
 
     public static class StatesViewHolder extends RecyclerView.ViewHolder {
         private TextView state_name;
-        private TextView state_confirmed;
-        private TextView state_active;
-        private TextView state_discharged;
-        private TextView state_deaths;
+        private TextView state_confirmed, state_confirmed_value;
+        private TextView state_active, state_active_value;
+        private TextView state_discharged, state_discharged_value;
+        private TextView state_deaths, state_deaths_value;
 
         public StatesViewHolder(@NonNull View itemView) {
             super(itemView);
-            state_name = itemView.findViewById(R.id.stateName);
+            state_name = itemView.findViewById(R.id.state_name);
             state_confirmed = itemView.findViewById(R.id.totalConfirmedState);
             state_active = itemView.findViewById(R.id.totalActiveState);
             state_discharged = itemView.findViewById(R.id.totalDischargedState);
             state_deaths = itemView.findViewById(R.id.totalDeathsState);
+            state_confirmed_value = itemView.findViewById(R.id.totalConfirmedStateValue);
+            state_active_value = itemView.findViewById(R.id.totalActiveStateValue);
+            state_discharged_value =  itemView.findViewById(R.id.totalDischargedStateValue);
+            state_deaths_value = itemView.findViewById(R.id.totalDeathsStateValue);
         }
 
         public void bind(State currentState) {
             state_name.setText(currentState.getState());
 
-            StringBuilder confirmedCasesBuilder = new StringBuilder();
-            confirmedCasesBuilder.append("Total Confirmed Cases: ");
-            confirmedCasesBuilder.append(currentState.getConfirmedCases());
-            state_confirmed.setText(confirmedCasesBuilder);
+            state_confirmed.setText(R.string.total_confirmed);
+            state_confirmed_value.setText(currentState.getConfirmedCases().toString());
 
-            StringBuilder activeCasesBuilder = new StringBuilder();
-            activeCasesBuilder.append("Total Active Cases: ");
-            activeCasesBuilder.append(currentState.getCasesOnAdmission());
-            state_active.setText(activeCasesBuilder);
+            state_active.setText(R.string.active_cases);
+            state_active_value.setText(currentState.getCasesOnAdmission().toString());
 
-            StringBuilder dischargedBuilder = new StringBuilder();
-            dischargedBuilder.append("Total Discharged: ");
-            dischargedBuilder.append(currentState.getDischarged());
-            state_discharged.setText(dischargedBuilder);
+            state_discharged.setText(R.string.total_discharged);
+            state_discharged_value.setText(currentState.getDischarged().toString());
 
-            StringBuilder deathsBuilder = new StringBuilder();
-            deathsBuilder.append("Total Deaths: ");
-            deathsBuilder.append(currentState.getDeath());
-            state_deaths.setText(deathsBuilder);
+            state_deaths.setText(R.string.total_deaths);
+            state_deaths_value.setText(currentState.getDeath().toString());
         }
     }
 }

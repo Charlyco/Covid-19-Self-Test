@@ -5,101 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_blue2"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textViewMain"
-        style="@android:style/Widget.TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/app_blue2"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="2dp"
-        android:paddingEnd="2dp"
-        android:text="@string/headline"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="sans"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_main" />
-
-    <ImageButton
-        android:id="@+id/takeTestButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/take_test"
-        android:onClick="launchTest"
-        android:padding="4dp"
-        android:src="@drawable/take_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMain" />
-
-    <Button
-        android:id="@+id/pastRecordBtn"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/rounded_btn"
-        android:drawableStart="@drawable/health_records1"
-        android:drawableEnd="@drawable/health_records1"
-        android:drawablePadding="4dp"
-        android:fontFamily="@font/playfair_display_bold"
-        android:onClick="launchTestRecords"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/test_record_btn"
-        android:textColor="@color/app_color3"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/currentStatBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/currentStatBtn"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_btn"
-        android:drawableStart="@drawable/statistics_icon"
-        android:drawableEnd="@drawable/statistics_icon"
-        android:drawablePadding="4dp"
-        android:fontFamily="@font/playfair_display_bold"
-        android:onClick="viewNcdcStats"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/online_statistics"
-        android:textColor="@color/app_color3"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/adViewMain"
-        app:layout_constraintEnd_toEndOf="@+id/pastRecordBtn"
-        app:layout_constraintStart_toStartOf="@+id/pastRecordBtn" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_main"
@@ -113,5 +19,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/app_blue2" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/nav_graph_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

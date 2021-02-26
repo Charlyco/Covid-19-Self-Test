@@ -281,6 +281,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/status_info" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

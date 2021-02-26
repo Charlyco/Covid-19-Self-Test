@@ -13,7 +13,7 @@ import com.example.covid_19selftest.data.State;
 
 import java.util.List;
 
-public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.StatesViewHolder> {
+public class    StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.StatesViewHolder> {
     List<State> cStates;
     private LayoutInflater cInflater;
 

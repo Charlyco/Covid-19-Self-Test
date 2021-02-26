@@ -26,10 +26,6 @@ public class ResultDetails extends Fragment {
     private Button cForward;
     private Result cResult;
 
-       public static ResultDetails newInstance() {
-        return new ResultDetails();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {

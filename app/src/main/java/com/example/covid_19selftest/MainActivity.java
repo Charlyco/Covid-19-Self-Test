@@ -4,6 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -24,32 +30,21 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class MainActivity extends AppCompatActivity {
-    private AdView cAdView;
-    Toolbar cToolbar;
+    Fragment cMainFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        cToolbar = findViewById(R.id.toolbar_main);
+        Toolbar cToolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(cToolbar);
+        cMainFragment = MainFragment.newInstance();
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-
-            }
-        });
-      cAdView = findViewById(R.id.adViewMain);
-        AdRequest cAdRequest = new AdRequest.Builder().build();
-        cAdView.loadAd(cAdRequest);
-        cAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                cAdView.setVisibility(View.VISIBLE);
-            }
-        });
+        NavController cNavController = Navigation.findNavController(this, R.id.nav_host_fragment1);
+        AppBarConfiguration cAppBarConfiguration = new AppBarConfiguration
+                .Builder(cNavController.getGraph()).build();
+        NavigationUI.setupWithNavController(cToolbar, cNavController, cAppBarConfiguration);
     }
 
     @Override
@@ -61,43 +56,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.twitter:
-                String userId = "Limitless_OCC";
-                PackageManager cPackageManager1 = getPackageManager();
-                openTwitter(cPackageManager1, userId);
-                return true;
-            case R.id.facebook:
-                String pageId = "charlycotechnologies";
-                PackageManager cPackageManager = getPackageManager();
-                openFaceBookIntent(cPackageManager, pageId);
-                return true;
-//            case R.id.linkedIn:
-//                String myId = "limitlessb4a7b9145";
-//                PackageManager cPackageManager2 = getPackageManager();
-//                openLinkedin(cPackageManager2, myId);
-//                return true;
-            case R.id.about:
-                startActivity(new Intent(this, AboutActivity.class));
-                return true;
-            case R.id.privacy:
-                startActivity(new Intent(this, PrivacyPolicyActivity.class));
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        NavController cNavController = Navigation
+                .findNavController(this, R.id.nav_host_fragment1);
+        if (item.getItemId() == R.id.twitter) {
+            String userId = "Limitless_OCC";
+            PackageManager cPackageManager1 = getPackageManager();
+            openTwitter(cPackageManager1, userId);
+            return true;
+        } else if (item.getItemId() ==  R.id.facebook) {
+            String pageId = "charlycotechnologies";
+            PackageManager cPackageManager = getPackageManager();
+            openFaceBookIntent(cPackageManager, pageId);
+            return true;
+        } else {
+            return NavigationUI.onNavDestinationSelected(item, cNavController)
+                    || super.onOptionsItemSelected(item);
         }
     }
-
-//    private void openLinkedin(PackageManager packageManager2, String myId) {
-//        String urlLn="https://www.linkedin.com/in/" + myId;
-//        try {
-//            packageManager2.getPackageInfo("com.linkedin.android", 0);
-//            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://" + myId)));
-//        } catch (PackageManager.NameNotFoundException e) {
-//            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlLn) ));
-//        }
-//    }
 
     private void openTwitter(PackageManager packageManager1, String userId) {
         try {
@@ -134,15 +109,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void launchTest(View view) {
-        startActivity(new Intent(this, TestActivity.class));
-    }
-
-    public void launchTestRecords(View view) {
-        startActivity(new Intent(this, TestResults.class));
-    }
-
-    public void viewNcdcStats(View view) {
-        startActivity(new Intent(this, Covid_19_stat.class));
-    }
 }

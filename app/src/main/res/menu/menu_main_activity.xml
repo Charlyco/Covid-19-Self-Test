@@ -15,11 +15,11 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/privacy"
+        android:id="@+id/privacyPolicyFragment"
         android:title="@string/privacy"
         app:showAsAction="never" />
     <item
-        android:id="@+id/about"
+        android:id="@+id/aboutFragment"
         android:title="@string/about_us"
         app:showAsAction="never" />
 </menu>

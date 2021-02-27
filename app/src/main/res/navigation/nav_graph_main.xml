@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_safetyGuidelines"
-            app:destination="@id/safetyGuidelines" />
+            app:destination="@id/navigation" />
         <action
             android:id="@+id/action_mainFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
@@ -21,11 +21,6 @@
             app:destination="@id/privacyPolicyFragment" />
     </fragment>
     <fragment
-        android:id="@+id/safetyGuidelines"
-        android:name="com.example.covid_19selftest.SafetyGuidelines"
-        android:label="@string/safety_guidelines"
-        tools:layout="@layout/fragment_safety_guidelines" />
-    <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.covid_19selftest.AboutFragment"
         android:label="About Us" />
@@ -33,4 +28,21 @@
         android:id="@+id/privacyPolicyFragment"
         android:name="com.example.covid_19selftest.PrivacyPolicyFragment"
         android:label="Privacy Policy" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/safetyGuidelines">
+        <fragment
+            android:id="@+id/safetyGuidelines"
+            android:name="com.example.covid_19selftest.SafetyGuidelines"
+            android:label="@string/safety_guidelines"
+            tools:layout="@layout/fragment_safety_guidelines" >
+            <action
+                android:id="@+id/action_safetyGuidelines_to_safetyGuidelineDetailsFragment"
+                app:destination="@id/safetyGuidelineDetailsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/safetyGuidelineDetailsFragment"
+            android:name="com.example.covid_19selftest.SafetyGuidelineDetailsFragment"
+            android:label="@string/safety_guidelines"
+            tools:layout="@layout/fragment_safety_guideline_details" />
+    </navigation>
 </navigation>

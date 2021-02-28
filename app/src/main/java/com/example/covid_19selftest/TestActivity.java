@@ -20,7 +20,7 @@ import com.example.covid_19selftest.ui.test_results.ResultViewModel;
 
 public class TestActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private EditText cName, cHealthCondition;
-    public EditText cDateOfBirth;
+    public EditText cDateOfAssessment;
     private RadioGroup cHealthComplication;
     private Spinner cStateSpinner;
     private CheckBox cBreathing, cDryCough, cSpeechLoss, cTasteLoss, cFever, cChestPain, cTiredness, cSoreThroat;
@@ -39,7 +39,7 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
         cStateSpinner.setAdapter(adapter);
 
         cName = findViewById(R.id.patientName);
-        cDateOfBirth = findViewById(R.id.dateOfBirth);
+        cDateOfAssessment = findViewById(R.id.dateOfAssessment);
         cHealthCondition = findViewById(R.id.healthCondition);
         cHealthComplication = findViewById(R.id.healthComplication);
         cBreathing = findViewById(R.id.breathingCheckBox);
@@ -52,8 +52,8 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
         cSoreThroat = findViewById(R.id.soreThroatCheckBox);
         cHealthComplication = findViewById(R.id.healthComplication);
 
-        cDateOfBirth.setInputType(0);
-        cDateOfBirth.setOnClickListener(new View.OnClickListener() {
+        cDateOfAssessment.setInputType(0);
+        cDateOfAssessment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DialogFragment cDialogFragment = new DatePickerFragment();
@@ -66,7 +66,7 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
        to determine status */
     public void submitTest(View view) {
         String cPatientName = cName.getText().toString();
-        String cDoB = cDateOfBirth.getText().toString();
+        String cDoA = cDateOfAssessment.getText().toString();
         String state = cStateSpinner.getSelectedItem().toString();
         String cHealthCond = "None";
         if (cHealthComplication.getCheckedRadioButtonId() == R.id.yesButton) {
@@ -126,7 +126,7 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
         } else {
             recommendation = getString(R.string.negative);
         }
-        Result cResult = new Result(cPatientName, cDoB, state, cHealthCond, diffBreathing,
+        Result cResult = new Result(cPatientName, cDoA, state, cHealthCond, diffBreathing,
                 chestPain, speechLoss, tasteLoss, fever, dryCough, tiredness, soreThroat, recommendation);
         cResultViewModel.insertResult(cResult);
         startActivity(new Intent(this, TestResults.class));
@@ -140,7 +140,7 @@ public class TestActivity extends AppCompatActivity implements DatePickerDialog.
                 i1 +
                 "/" +
                 i;
-        cDateOfBirth.setText(cDate);
-        cDateOfBirth.setInputType(1);
+        cDateOfAssessment.setText(cDate);
+        cDateOfAssessment.setInputType(1);
     }
 }

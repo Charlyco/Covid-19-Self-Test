@@ -76,7 +76,7 @@ public class ResultDetails extends Fragment {
                 "\bMY DETAILS" + "\n\n" +
                 "Name: " + result.getName() + "\n" +
                 "State of residence: " + result.getState() + "\n" +
-                "Date of birth: " + result.getDateOfBirth() + "\n" +
+                "Date of assessment: " + result.getDateOfAssessment() + "\n" +
                 "\n" +
                 "Other Health Complications: " + result.getHealthCondition() + "\n\n" +
                 "\bMY SYMPTOMS:\n\n" +

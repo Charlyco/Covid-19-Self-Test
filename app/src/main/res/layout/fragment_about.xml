@@ -35,7 +35,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
-                android:text="@string/about_us_writup"
+                android:text="@string/about_us_writeup"
                 android:textAlignment="textStart"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toTopOf="@+id/scrollView2"

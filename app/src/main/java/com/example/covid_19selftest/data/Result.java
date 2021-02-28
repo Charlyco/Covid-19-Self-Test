@@ -19,8 +19,8 @@ public class Result implements Serializable {
     @ColumnInfo(name = "patient_name")
     public String name;
 
-    @ColumnInfo(name = "date_of_birth")
-    public String dateOfBirth;
+    @ColumnInfo(name = "date_of_assessment")
+    public String dateOfAssessment;
 
     @ColumnInfo(name = "state_of_origin")
     public String state;
@@ -39,11 +39,11 @@ public class Result implements Serializable {
     public Result() {
     }
 
-    public Result(@NonNull String name, String dateOfBirth, String state, String healthCondition,
+    public Result(@NonNull String name, String dateOfAssessment, String state, String healthCondition,
                   String breathing, String chestPain, String speechLoss, String tasteLoss, String fever,
                   String dryCough, String tiredness, String soreThroat, String recommendation) {
         this.name = name;
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfAssessment = dateOfAssessment;
         this.state = state;
         this.healthCondition = healthCondition;
         this.breathing = breathing;
@@ -62,8 +62,8 @@ public class Result implements Serializable {
         return name;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getDateOfAssessment() {
+        return dateOfAssessment;
     }
 
     public String getState() {
@@ -106,7 +106,7 @@ public class Result implements Serializable {
         return recommendation;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDateOfAssessment(String dateOfAssessment) {
+        this.dateOfAssessment = dateOfAssessment;
     }
 }

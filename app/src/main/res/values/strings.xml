@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Covid-19 Self Test</string>
+    <string name="app_name">Covid SA</string>
     <string name="headline">Help Stop The Spread of Covid-19.\n Get Yourself Tested Today</string>
     <string name="test_record_btn">VIEW PREVOIUS TEST RECORDS</string>
     <string name="online_statistics">CURRENT NCDC STATISTICS</string>
-    <string name="hello">Welcome! Take a few minutes to answer a few questions to help us determine
-        your possible Covid-19 status. Please note that the result produced is only a symptom analysis
-        result based on the answers you provided and does not satisfactorily determine your Covid-19 status.
-        This self assessment tool serves only for informational purposes and should not be regarded as a medical diagnosis
+    <string name="hello">Welcome! Take a few minutes to answer a few questions to help us assess
+        your probable Covid-19 status. Please note that the result produced is only a symptom analysis
+        result based on the answers you provide and does not satisfactorily determine your Covid-19 status.
+        Hence, this self assessment tool serves only for informational purposes and should not be regarded as a medical diagnosis.
     </string>
     <string name="name">Full Name</string>
-    <string name="date_of_birth">Date of Birth (DD/MM/YYYY)</string>
+    <string name="date_of_assessment">What is today\'s date (DD/MM/YYYY)</string>
     <string name="states">List of states for the user to select from</string>
     <string name="health_complication">Do you have any health complications?</string>
     <string name="yes_button">Yes</string>
@@ -32,21 +32,6 @@
     <string name="submit_test">Submit Test</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
-    <!-- Preference Titles -->
-    <string name="user_header">User Details</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-
     <!-- Test Strings -->
     <string name="difficulty_in_breathing">Difficulty in breathing</string>
     <string name="chest_pain">Chest Pain</string>
@@ -59,13 +44,13 @@
     <string name="less_likely_positive_recommend">Your symptoms seems to be less serious but we do
         recommend that you contact the nearest medical facility for medical test. You can
         as well forward your assessment result to the NCDC by clicking the \"FORWARD RESULT TO
-        NCDC\" button below.</string>
+        NCDC\" button below, for further actions. </string>
     <string name="likely_positive">Likely Positive</string>
-    <string name="negative">Likely Negative</string>
+    <string name="negative">Your Assessment result Indicates Negative</string>
     <string name="negative_recommendation">You don\'t seem to have a enough symptoms that could suggest having COVID-19.
     However we recommend that you visit a medical facility for medical test if symptoms persist or worsens</string>
     <string name="hello_user">Hello user</string>
-    <string name="result_summary">This is the summary of your test based on the symptoms you indicated as positive:</string>
+    <string name="result_summary">This is the summary of your test based on the symptoms you have: </string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="statistics_intro">REALTIME RECORD OF COVID-19 CASES IN NIGERIA</string>
@@ -84,8 +69,8 @@
     <string name="about_us">About us</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="privacy_policy">Charlyco Technologies Privacy Policy \n \n
-       Effective Date: June 30, 2020 \n \n
+    <string name="privacy_policy">COVID-19 SELF-ASSESSMENT APP PRIVACY POLICY \n \n
+       Effective Date: January 30, 2021 \n \n
         This policy explains what information we collect when you use the Covid-19 Self-assessment mobile app.
         It also has information about how we store, use, transfer, and delete that information. \n \n
 
@@ -125,18 +110,22 @@
         We welcome feedback about this policy at charlyco84@yahoo.com \n
         Phone: +2347037590923 </string>
 
-    <string name="about_us_writup">
-        The community made me and I am glad to give back to the community.\n\n
-        This mobile application is built as my contribution to the Andela Community Projects for the
-        2020 Google Africa Developer Scholarship program.\n\n
-        I am forever grateful to Andela Learning Community, Google Africa and Pluralsight for the
-        opportunity to develop a career out of my passion.\n\n
+    <string name="about_us_writeup">
+        At Charlyco Technologies, we offer a wide range of IT services with several years of
+        professional experience in the IT industry.\n\n
+        Our services include:\n\n
+        &#8226; Mobile Applications Development\n\n
+        &#8226; Computer Network Installation and Management \n\n
+        &#8226; Computer Repairs and Maintenance \n\n
+        &#8226; Security Camera Installation (with remote Viewing capability)\n\n
 
-        Email: theyoungeng1@gmail.com\n
-        Phone: +2347037590923 </string>
+        We are located at Room 26, first floor, Lucy Lodge, Umuerim Nekede, Owerri Imo State, Nigeria.\nn
+
+        Email: limitless6909@hotmail.com, charlyco84@yahoo.com\n
+        Phone: +2347037590923, +2349057202785 </string>
     <string name="zero">000</string>
     <string name="state_name">Name of State</string>
-    <string name="covidAdvice">COVID-19 SAFETY GUIDLINES</string>
+    <string name="covid_advice">COVID-19 SAFETY GUIDLINES</string>
     <string name="safety_guidelines">Safety Guidelines</string>
     <string name="take_test_button">TAKE A QUICK SELF EXAMINATION</string>
     <string name="safety_guide_btn">NCDC / WHO SAFETY GUIDELINE</string>

@@ -10,6 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 
 public class SafetyGuidelines extends Fragment {
 
@@ -23,6 +30,22 @@ public class SafetyGuidelines extends Fragment {
         TextView cCoverCoughs = root.findViewById(R.id.cover_coughs);
         TextView cHygiene = root.findViewById(R.id.clean_and_disinfect);
         TextView cMonitorHealth = root.findViewById(R.id.monitor_health);
+        final AdView cAdView = root.findViewById(R.id.adView2);
+
+        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
+        AdRequest cAdRequest = new AdRequest.Builder().build();
+        cAdView.loadAd(cAdRequest);
+        cAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                cAdView.setVisibility(View.VISIBLE);
+            }
+        });
 
         cWearMast.setOnClickListener(new View.OnClickListener() {
             @Override

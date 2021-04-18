@@ -20,7 +20,10 @@ import android.widget.TextView;
 
 import com.example.covid_19selftest.R;
 
-public class SplashScreenFragment extends Fragment {
+public class SplashScreenFragment extends Fragment implements Animator.AnimatorListener {
+    private TextView cHeaderText;
+    private ImageView cCovidLogo;
+    private View cView;
 
     public static SplashScreenFragment newInstance() {
             return new SplashScreenFragment();
@@ -32,12 +35,9 @@ public class SplashScreenFragment extends Fragment {
             View root = inflater.inflate(R.layout.fragment_splash_screen,
                     container, false);
 
-        TextView headerText = root.findViewById(R.id.textSplashScreen);
-        animateHeaderText(headerText);
-
-        ImageView covidLogo = root.findViewById(R.id.covid_logo_splash);
-        logoAnimator(covidLogo);
-
+        cHeaderText = root.findViewById(R.id.textSplashScreen);
+        cCovidLogo = root.findViewById(R.id.covid_logo_splash);
+        animateView();
         return root;
         }
 
@@ -45,7 +45,10 @@ public class SplashScreenFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        int cSPLASH_DISPLAY_LENGTH = 8000;
+    }
+
+    private void delayScreen(@NonNull final View view) {
+        int cSPLASH_DISPLAY_LENGTH = 3000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -68,12 +71,39 @@ public class SplashScreenFragment extends Fragment {
     private void animateHeaderText(View view) {
         Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
         cAnimator.setTarget(view);
+        cAnimator.addListener(this);
         cAnimator.start();
+        cView = view;
     }
 
     private void logoAnimator(View view) {
         Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.rotate);
         cAnimator.setTarget(view);
+        cAnimator.addListener(this);
         cAnimator.start();
+    }
+    public void animateView() {
+        animateHeaderText(cHeaderText);
+        logoAnimator(cCovidLogo);
+    }
+
+    @Override
+    public void onAnimationStart(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animator animation) {
+        delayScreen(cView);
+    }
+
+    @Override
+    public void onAnimationCancel(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animator animation) {
+
     }
 }

@@ -67,6 +67,6 @@ dependencies {
     //AddMob
     implementation 'com.google.android.gms:play-services-ads:20.0.0'
 
-    // Circle menu
+    // Animation thirdparty libraries
     implementation 'com.ramotion.circlemenu:circle-menu:0.3.2'
 }

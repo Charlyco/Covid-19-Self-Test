@@ -13,8 +13,10 @@
         <action
             android:id="@+id/action_splashScreen_to_navigation2"
             app:destination="@id/navigation2"
+            app:enterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/splashScreen"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <navigation android:id="@+id/navigation2"
         app:startDestination="@id/mainFragment">
@@ -25,13 +27,19 @@
             tools:layout="@layout/fragment_main">
             <action
                 android:id="@+id/action_mainFragment_to_safetyGuidelines"
-                app:destination="@id/navigation" />
+                app:destination="@id/navigation"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out" />
             <action
                 android:id="@+id/action_mainFragment_to_aboutFragment"
-                app:destination="@id/aboutFragment" />
+                app:destination="@id/aboutFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out" />
             <action
                 android:id="@+id/action_mainFragment_to_privacyPolicyFragment"
-                app:destination="@id/privacyPolicyFragment" />
+                app:destination="@id/privacyPolicyFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out" />
         </fragment>
         <navigation
             android:id="@+id/navigation"
@@ -43,7 +51,9 @@
                 tools:layout="@layout/fragment_safety_guidelines">
                 <action
                     android:id="@+id/action_safetyGuidelines_to_safetyGuidelineDetailsFragment"
-                    app:destination="@id/safetyGuidelineDetailsFragment" />
+                    app:destination="@id/safetyGuidelineDetailsFragment"
+                    app:enterAnim="@anim/fade_transition"
+                    app:exitAnim="@android:anim/fade_out" />
             </fragment>
             <fragment
                 android:id="@+id/safetyGuidelineDetailsFragment"

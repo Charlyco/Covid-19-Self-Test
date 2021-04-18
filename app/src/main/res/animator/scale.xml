@@ -8,7 +8,7 @@
         android:valueTo="2.0"
         android:valueType="floatType"
         android:repeatMode="reverse"
-        android:repeatCount="2"/>
+        android:repeatCount="1"/>
 
     <objectAnimator
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,5 +18,5 @@
         android:valueTo="2.0"
         android:valueType="floatType"
         android:repeatMode="reverse"
-        android:repeatCount="2"/>
+        android:repeatCount="1"/>
 </set>

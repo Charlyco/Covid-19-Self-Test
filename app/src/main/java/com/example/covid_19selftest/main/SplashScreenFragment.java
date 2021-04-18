@@ -66,13 +66,13 @@ public class SplashScreenFragment extends Fragment {
     }
 
     private void animateHeaderText(View view) {
-        Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.scale);
+        Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
         cAnimator.setTarget(view);
         cAnimator.start();
     }
 
     private void logoAnimator(View view) {
-        Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.scale);
+        Animator cAnimator = AnimatorInflater.loadAnimator(getActivity(), R.animator.rotate);
         cAnimator.setTarget(view);
         cAnimator.start();
     }

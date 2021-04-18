@@ -313,7 +313,6 @@
     </string>
     <string name="welcome">Welcome!</string>
     <string name="splash_screen_image">Splash Screen Image</string>
-    <string name="no">No</string>
-    <string name="yes">Yes</string>
+
 
 </resources>

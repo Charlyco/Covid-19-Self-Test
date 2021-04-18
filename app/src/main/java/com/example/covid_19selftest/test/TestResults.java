@@ -20,10 +20,10 @@ public class TestResults extends AppCompatActivity {
         Toolbar cToolbar = findViewById(R.id.resultToolbar);
         setSupportActionBar(cToolbar);
 
-        ActionBar cActionBar = getSupportActionBar();
-        if (cActionBar != null) {
-            cActionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        ActionBar cActionBar = getSupportActionBar();
+//        if (cActionBar != null) {
+//            cActionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
 //        if (savedInstanceState == null) {
 //            getSupportFragmentManager().beginTransaction()

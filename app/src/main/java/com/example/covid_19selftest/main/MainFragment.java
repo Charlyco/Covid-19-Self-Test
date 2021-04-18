@@ -5,6 +5,7 @@ import android.animation.AnimatorInflater;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -25,6 +26,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.ramotion.circlemenu.CircleMenuView;
 
 public class MainFragment extends Fragment {
     private AdView cAdView;
@@ -51,49 +53,71 @@ public class MainFragment extends Fragment {
         cAdView.loadAd(cAdRequest);
         cAdView.setAdListener(new AdListener() {
             @Override
-            public void onAdLoaded() {
-                cAdView.setVisibility(View.VISIBLE);
+            public void onAdLoaded() { cAdView.setVisibility(View.VISIBLE);
             }
         });
 
-        final TextView cViewStatistics = root.findViewById(R.id.currentStatBtn);
-        final TextView cPastRecord = root.findViewById(R.id.pastRecordBtn);
-        final TextView cTakeTest = root.findViewById(R.id.take_test);
-        final TextView cCovidGuideline = root.findViewById(R.id.view_safety_tips);
+//        final TextView cViewStatistics = root.findViewById(R.id.currentStatBtn);
+//        final TextView cPastRecord = root.findViewById(R.id.pastRecordBtn);
+//        final TextView cTakeTest = root.findViewById(R.id.take_test);
+//        final TextView cCovidGuideline = root.findViewById(R.id.view_safety_tips);
 
-        cViewStatistics.setOnClickListener(new View.OnClickListener() {
+//        cViewStatistics.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fadeButton(cViewStatistics);
+//                viewNcdcStats();
+//            }
+//        });
+//
+//        cPastRecord.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fadeButton(cPastRecord);
+//                launchTestRecords();
+//            }
+//        });
+//
+//        cTakeTest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fadeButton(cTakeTest);
+//                launchTest();
+//            }
+//        });
+//
+//        cCovidGuideline.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fadeButton(cCovidGuideline);
+//                launchSafetyGuideline(view);
+//            }
+//        });
+
+        CircleMenuView cCircleMenuView = root.findViewById(R.id.circle_menu);
+        cCircleMenuView.setEventListener(new CircleMenuView.EventListener() {
             @Override
-            public void onClick(View view) {
-                fadeButton(cViewStatistics);
-                viewNcdcStats();
+            public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int buttonIndex) {
+                super.onButtonClickAnimationEnd(view, buttonIndex);
+                getSelectedButton(view, buttonIndex);
             }
         });
-
-        cPastRecord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fadeButton(cPastRecord);
-                launchTestRecords();
-            }
-        });
-
-        cTakeTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fadeButton(cTakeTest);
-                launchTest();
-            }
-        });
-
-        cCovidGuideline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fadeButton(cCovidGuideline);
-                launchSafetyGuideline(view);
-            }
-        });
-
         return root;
+    }
+
+    private void getSelectedButton(CircleMenuView view, int buttonIndex) {
+        if (buttonIndex == 0) {
+            launchTest();
+        }
+        else if (buttonIndex == 1) {
+            launchSafetyGuideline(view);
+        }
+        else if (buttonIndex == 2) {
+            launchTestRecords();
+        }
+        else if (buttonIndex == 3) {
+            viewNcdcStats();
+        }
     }
 
     private void fadeButton(View view) {

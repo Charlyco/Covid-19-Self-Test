@@ -8,26 +8,18 @@
     android:background="@color/white"
     tools:context=".main.MainFragment">
 
-    <TextView
-        android:id="@+id/textViewMain"
-        style="@android:style/Widget.TextView"
-        android:layout_width="0dp"
+
+    <com.ramotion.circlemenu.CircleMenuView
+        android:id="@+id/circle_menu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="2dp"
-        android:paddingEnd="2dp"
-        android:text="@string/welcome"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@color/app_color3"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="sans"
+        app:button_colors="@array/colors"
+        app:button_icons="@array/main_icons"
+        app:layout_constraintBottom_toTopOf="@id/adViewMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adViewMain"
@@ -40,88 +32,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/take_test"
-        android:layout_width="164dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/rounded_img_btn"
-        android:ems="10"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="4dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="4dp"
-        android:paddingBottom="16dp"
-        android:text="@string/take_test_button"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/view_safety_tips"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMain" />
-
-    <TextView
-        android:id="@+id/pastRecordBtn"
-        android:layout_width="164dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_img_btn"
-        android:ems="10"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="4dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="4dp"
-        android:paddingBottom="16dp"
-        android:text="@string/test_record_btn"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/take_test"
-        app:layout_constraintStart_toStartOf="@+id/take_test"
-        app:layout_constraintTop_toBottomOf="@+id/take_test" />
-
-    <TextView
-        android:id="@+id/currentStatBtn"
-        android:layout_width="164dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_img_btn"
-        android:ems="10"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="4dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="4dp"
-        android:paddingBottom="16dp"
-        android:text="@string/online_statistics"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/view_safety_tips"
-        app:layout_constraintStart_toStartOf="@+id/view_safety_tips"
-        app:layout_constraintTop_toBottomOf="@+id/view_safety_tips" />
-
-    <TextView
-        android:id="@+id/view_safety_tips"
-        android:layout_width="164dp"
-        android:layout_height="0dp"
-        android:background="@drawable/rounded_img_btn"
-        android:ems="10"
-        android:fontFamily="@font/playfair_display_bold"
-        android:paddingStart="4dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="4dp"
-        android:paddingBottom="16dp"
-        android:text="@string/safety_guide_btn"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/take_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/take_test"
-        app:layout_constraintTop_toTopOf="@+id/take_test" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

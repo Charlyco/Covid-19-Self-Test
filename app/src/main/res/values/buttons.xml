@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="main_icons">
+        <item>@drawable/test_icon_main</item>
+        <item>@drawable/safety_tips_main</item>
+        <item>@drawable/result_main</item>
+        <item>@drawable/statistics_main</item>
+    </array>
+<array name="colors">
+    <item>@color/app_blue2</item>
+    <item>@color/red</item>
+    <item>@color/white</item>
+    <item>@color/colorPrimary</item>
+</array>
+
+</resources>

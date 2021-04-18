@@ -3,46 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/splashScreen">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.covid_19selftest.MainFragment"
+        android:id="@+id/splashScreen"
+        android:name="com.example.covid_19selftest.main.SplashScreenFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_splash_screen">
         <action
-            android:id="@+id/action_mainFragment_to_safetyGuidelines"
-            app:destination="@id/navigation" />
-        <action
-            android:id="@+id/action_mainFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_privacyPolicyFragment"
-            app:destination="@id/privacyPolicyFragment" />
+            android:id="@+id/action_splashScreen_to_navigation2"
+            app:destination="@id/navigation2"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true"/>
     </fragment>
-    <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.covid_19selftest.AboutFragment"
-        android:label="About Us" />
-    <fragment
-        android:id="@+id/privacyPolicyFragment"
-        android:name="com.example.covid_19selftest.PrivacyPolicyFragment"
-        android:label="Privacy Policy" />
-    <navigation android:id="@+id/navigation"
-        app:startDestination="@id/safetyGuidelines">
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/mainFragment">
         <fragment
-            android:id="@+id/safetyGuidelines"
-            android:name="com.example.covid_19selftest.SafetyGuidelines"
-            android:label="@string/safety_guidelines"
-            tools:layout="@layout/fragment_safety_guidelines" >
+            android:id="@+id/mainFragment"
+            android:name="com.example.covid_19selftest.main.MainFragment"
+            android:label="@string/app_name"
+            tools:layout="@layout/fragment_main">
             <action
-                android:id="@+id/action_safetyGuidelines_to_safetyGuidelineDetailsFragment"
-                app:destination="@id/safetyGuidelineDetailsFragment" />
+                android:id="@+id/action_mainFragment_to_safetyGuidelines"
+                app:destination="@id/navigation" />
+            <action
+                android:id="@+id/action_mainFragment_to_aboutFragment"
+                app:destination="@id/aboutFragment" />
+            <action
+                android:id="@+id/action_mainFragment_to_privacyPolicyFragment"
+                app:destination="@id/privacyPolicyFragment" />
         </fragment>
+        <navigation
+            android:id="@+id/navigation"
+            app:startDestination="@id/safetyGuidelines">
+            <fragment
+                android:id="@+id/safetyGuidelines"
+                android:name="com.example.covid_19selftest.safety_guide.SafetyGuidelines"
+                android:label="@string/safety_guidelines"
+                tools:layout="@layout/fragment_safety_guidelines">
+                <action
+                    android:id="@+id/action_safetyGuidelines_to_safetyGuidelineDetailsFragment"
+                    app:destination="@id/safetyGuidelineDetailsFragment" />
+            </fragment>
+            <fragment
+                android:id="@+id/safetyGuidelineDetailsFragment"
+                android:name="com.example.covid_19selftest.safety_guide.SafetyGuidelineDetailsFragment"
+                android:label="@string/safety_guidelines"
+                tools:layout="@layout/fragment_safety_guideline_details" />
+        </navigation>
         <fragment
-            android:id="@+id/safetyGuidelineDetailsFragment"
-            android:name="com.example.covid_19selftest.SafetyGuidelineDetailsFragment"
-            android:label="@string/safety_guidelines"
-            tools:layout="@layout/fragment_safety_guideline_details" />
+            android:id="@+id/aboutFragment"
+            android:name="com.example.covid_19selftest.AboutFragment"
+            android:label="About Us" />
+        <fragment
+            android:id="@+id/privacyPolicyFragment"
+            android:name="com.example.covid_19selftest.PrivacyPolicyFragment"
+            android:label="Privacy Policy" />
     </navigation>
 </navigation>

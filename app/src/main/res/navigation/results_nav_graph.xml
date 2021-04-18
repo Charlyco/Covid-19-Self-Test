@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/testResultsFragment"
-        android:name="com.example.covid_19selftest.TestResultsFragment"
+        android:name="com.example.covid_19selftest.test.TestResultsFragment"
         android:label="result_fragment"
         tools:layout="@layout/result_fragment" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultDetails"
-        android:name="com.example.covid_19selftest.ResultDetails"
+        android:name="com.example.covid_19selftest.test.ResultDetails"
         android:label="result_details_fragment"
         tools:layout="@layout/result_details_fragment" />
 </navigation>

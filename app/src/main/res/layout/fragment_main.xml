@@ -5,23 +5,23 @@
     android:id="@+id/constraintLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_blue"
-    tools:context=".MainFragment">
+    android:background="@color/white"
+    tools:context=".main.MainFragment">
 
     <TextView
         android:id="@+id/textViewMain"
         style="@android:style/Widget.TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/app_blue"
+        android:background="@color/white"
         android:fontFamily="@font/playfair_display_bold"
         android:paddingStart="2dp"
         android:paddingEnd="2dp"
-        android:text="@string/headline"
+        android:text="@string/welcome"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@color/app_blue2"
-        android:textSize="20sp"
+        android:textColor="@color/app_color3"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,8 +45,7 @@
         android:id="@+id/take_test"
         android:layout_width="164dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/rounded_img_btn"
         android:ems="10"
         android:fontFamily="@font/playfair_display_bold"
@@ -57,10 +56,10 @@
         android:text="@string/take_test_button"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/view_safety_tips"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMain" />
 
@@ -69,7 +68,6 @@
         android:layout_width="164dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="228dp"
         android:background="@drawable/rounded_img_btn"
         android:ems="10"
         android:fontFamily="@font/playfair_display_bold"
@@ -80,15 +78,16 @@
         android:text="@string/test_record_btn"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/take_test"
+        app:layout_constraintStart_toStartOf="@+id/take_test"
         app:layout_constraintTop_toBottomOf="@+id/take_test" />
 
     <TextView
         android:id="@+id/currentStatBtn"
         android:layout_width="164dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_img_btn"
         android:ems="10"
         android:fontFamily="@font/playfair_display_bold"
@@ -99,16 +98,15 @@
         android:text="@string/online_statistics"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pastRecordBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pastRecordBtn" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_safety_tips"
+        app:layout_constraintStart_toStartOf="@+id/view_safety_tips"
+        app:layout_constraintTop_toBottomOf="@+id/view_safety_tips" />
 
     <TextView
         android:id="@+id/view_safety_tips"
         android:layout_width="164dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_img_btn"
         android:ems="10"
         android:fontFamily="@font/playfair_display_bold"
@@ -119,9 +117,11 @@
         android:text="@string/safety_guide_btn"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/take_test"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/take_test"
         app:layout_constraintTop_toTopOf="@+id/take_test" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

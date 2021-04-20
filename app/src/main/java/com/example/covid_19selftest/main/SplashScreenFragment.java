@@ -66,6 +66,8 @@ public class SplashScreenFragment extends Fragment implements Animator.AnimatorL
                 .actionSplashScreenToNavigation2();
         NavController cController = Navigation.findNavController(view);
                 cController.navigate(action);
+                MainActivity cMainActivity = new MainActivity();
+                cMainActivity.replaceStartDestination();
     }
 
     private void animateHeaderText(View view) {

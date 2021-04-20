@@ -21,13 +21,13 @@
 
             <TextView
                 android:id="@+id/textView"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/privacy_policy"
                 android:textAlignment="center"
                 android:textColor="@color/app_color3"

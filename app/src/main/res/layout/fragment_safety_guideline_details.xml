@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingStart="8dp"
     android:paddingTop="4dp"
     android:paddingEnd="8dp"
@@ -19,11 +19,11 @@
 
         <TextView
             android:id="@+id/safety_guide_details"
+            style="@style/font_regular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="4dp"
             android:textAlignment="viewStart"
-            android:textColor="@color/app_color3"
-            android:textSize="18sp" />
-        </LinearLayout>
+            android:textColor="@color/app_blue2" />
+    </LinearLayout>
 </ScrollView>

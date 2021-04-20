@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment cStartFragment;
     public Toolbar cToolbar;
     private NavController cNavController;
+    private NavGraph cNavGraph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
         cToolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(cToolbar);
-        cStartFragment = SplashScreenFragment.newInstance();
 
         cNavController = Navigation.findNavController(this, R.id.nav_host_fragment1);
-        NavGraph cNavGraph = cNavController.getGraph();
+        cNavGraph = cNavController.getGraph();
         AppBarConfiguration cAppBarConfiguration = new AppBarConfiguration
                 .Builder(cNavGraph).build();
         NavigationUI.setupWithNavController(cToolbar, cNavController, cAppBarConfiguration);
+
+        cStartFragment = SplashScreenFragment.newInstance();
 
         cToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,16 +70,22 @@ public class MainActivity extends AppCompatActivity {
             String userId = "Limitless_OCC";
             PackageManager cPackageManager1 = getPackageManager();
             openTwitter(cPackageManager1, userId);
+            replaceStartDestination();
             return true;
         } else if (item.getItemId() ==  R.id.facebook) {
             String pageId = "charlycotechnologies";
             PackageManager cPackageManager = getPackageManager();
             openFaceBookIntent(cPackageManager, pageId);
+            replaceStartDestination();
             return true;
         } else {
             return NavigationUI.onNavDestinationSelected(item, cNavController)
                     || super.onOptionsItemSelected(item);
         }
+    }
+
+    public void replaceStartDestination() {
+        cNavGraph.setStartDestination(R.id.mainFragment);
     }
 
     private void openTwitter(PackageManager packageManager1, String userId) {
@@ -117,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         if (!cNavController.popBackStack()) {
             finish();
         }

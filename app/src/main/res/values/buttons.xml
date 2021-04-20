@@ -7,10 +7,11 @@
         <item>@drawable/statistics_main</item>
     </array>
 <array name="colors">
-    <item>@color/green</item>
-    <item>@color/red</item>
     <item>@color/white</item>
-    <item>@color/colorPrimary</item>
+    <item>@color/white</item>
+    <item>@color/white</item>
+    <item>@color/white</item>
+
 </array>
 
 </resources>

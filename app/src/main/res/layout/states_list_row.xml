@@ -9,7 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        app:cardElevation="4dp">
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,11 +20,11 @@
 
             <TextView
                 android:id="@+id/state_name"
+                style="@style/font_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/app_blue2"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/state_name" />
@@ -39,54 +41,50 @@
 
                 <TextView
                     android:id="@+id/totalConfirmedState"
+                    style="@style/font_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="Confirmed Cases" />
 
                 <TextView
                     android:id="@+id/totalActiveState"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="Active Cases" />
 
                 <TextView
                     android:id="@+id/totalDischargedState"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="Discharged" />
 
                 <TextView
                     android:id="@+id/totalDeathsState"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="Total Deaths" />
             </LinearLayout>
 
@@ -101,49 +99,45 @@
 
                 <TextView
                     android:id="@+id/totalConfirmedStateValue"
+                    style="@style/font_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/totalActiveStateValue"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/totalDischargedStateValue"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="@string/zero" />
 
                 <TextView
                     android:id="@+id/totalDeathsStateValue"
+                    style="@style/font_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/playfair_display"
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     tools:text="@string/zero" />
             </LinearLayout>
 

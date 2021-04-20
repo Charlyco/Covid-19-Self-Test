@@ -21,11 +21,11 @@
 
             <TextView
                 android:id="@+id/hello_user"
+                style="@style/font_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display_bold"
                 android:textColor="@color/app_blue2"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,78 +34,80 @@
 
             <TextView
                 android:id="@+id/textView5"
+                style="@style/font_regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:fontFamily="@font/playfair_display"
+                android:layout_marginEnd="16dp"
                 android:text="@string/result_summary"
                 android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hello_user" />
 
             <TextView
                 android:id="@+id/symptom1"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
                 android:id="@+id/symptom2"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom1" />
 
             <TextView
                 android:id="@+id/symptom3"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom2" />
 
             <TextView
                 android:id="@+id/symptom4"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom3" />
 
             <TextView
                 android:id="@+id/symptom5"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom4" />
 
             <TextView
                 android:id="@+id/symptom6"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom5" />
@@ -116,41 +118,40 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom6" />
 
             <TextView
                 android:id="@+id/symptom8"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="64dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom7" />
 
             <TextView
                 android:id="@+id/healthComplication"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
             <TextView
                 android:id="@+id/status_info"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/playfair_display_italic"
                 android:textAlignment="center"
                 android:textColor="@color/app_blue2"
                 android:textSize="18sp"
@@ -161,11 +162,11 @@
 
             <TextView
                 android:id="@+id/textView3"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/difficulty_in_breathing"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
@@ -174,11 +175,11 @@
 
             <TextView
                 android:id="@+id/textView6"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/chest_pain_or_pressure"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
@@ -187,11 +188,11 @@
 
             <TextView
                 android:id="@+id/textView7"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/loss_of_speech"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -199,11 +200,11 @@
 
             <TextView
                 android:id="@+id/textView8"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/fever"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -211,11 +212,11 @@
 
             <TextView
                 android:id="@+id/textView9"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/dry_cough"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -223,11 +224,11 @@
 
             <TextView
                 android:id="@+id/textView10"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/tiredness"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -235,11 +236,11 @@
 
             <TextView
                 android:id="@+id/textView11"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/loss_of_taste"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -247,11 +248,11 @@
 
             <TextView
                 android:id="@+id/textView12"
+                style="@style/font_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
                 android:text="@string/sore_throat"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -265,15 +266,13 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_button_solid"
-                android:drawableStart="@drawable/submit_icon"
-                android:drawableEnd="@drawable/submit_icon"
+                android:background="@drawable/rounded_img_btn"
                 android:drawablePadding="4dp"
-                android:fontFamily="@font/playfair_display_bold"
+                android:fontFamily="sans-serif"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:text="@string/send_result"
-                android:textColor="@color/app_blue2"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

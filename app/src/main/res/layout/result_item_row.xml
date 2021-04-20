@@ -33,25 +33,24 @@
 
             <TextView
                 android:id="@+id/user_name"
+                style="@style/font_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display_bold"
                 android:textColor="@color/app_blue2"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/status"
+                style="@style/font_regular"
                 android:layout_width="0dp"
                 android:layout_height="18dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/playfair_display"
-                android:textColor="@color/app_blue"
+                android:textColor="@color/app_blue2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/user_name" />

@@ -11,6 +11,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,6 +26,7 @@
 
             <TextView
                 android:id="@+id/textView2"
+                style="@style/font_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -34,14 +36,13 @@
                 android:text="@string/hello"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/patientName"
-                style="@style/Widget.AppCompat.EditText"
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -60,6 +61,7 @@
 
             <EditText
                 android:id="@+id/dateOfAssessment"
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -94,10 +96,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/playfair_display_bold"
+                android:fontFamily="sans-serif"
                 android:text="@string/health_complication"
                 android:textColor="@color/app_blue2"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioGroup
                 android:id="@+id/healthComplication"
@@ -112,33 +114,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/yes_button"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <RadioButton
                     android:id="@+id/noButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/no_button"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
             </RadioGroup>
 
             <TextView
                 android:id="@+id/ifYes"
+                style="@style/font_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/playfair_display_bold"
+                android:fontFamily="sans-serif"
                 android:text="@string/if_yes"
                 android:textColor="@color/app_blue2"
                 android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/healthCondition"
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
@@ -152,12 +156,13 @@
 
             <TextView
                 android:id="@+id/textView4"
+                style="@style/font_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/playfair_display_bold"
+                android:fontFamily="sans-serif"
                 android:text="@string/symptoms"
                 android:textColor="@color/app_blue2"
                 android:textSize="16sp" />
@@ -166,68 +171,85 @@
                 android:id="@+id/breathingCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/difficulty_breathing"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/chest_painCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/chest_pain_or_pressure"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/speechLossCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/loss_of_speech"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/lossOfTasteCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/loss_of_taste"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/feverCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/fever"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/dryCoughCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/dry_cough"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/tirednessCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/tiredness"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/soreThroatCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/playfair_display"
                 android:text="@string/sore_throat"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/endNote"
+                style="@style/font_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -244,16 +266,14 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/rounded_button_solid"
-                android:drawableStart="@drawable/submit_icon"
-                android:drawableEnd="@drawable/submit_icon"
-                android:fontFamily="@font/playfair_display_bold"
+                android:background="@drawable/rounded_img_btn"
+                android:fontFamily="sans-serif"
                 android:onClick="submitTest"
                 android:paddingStart="@dimen/button_padding"
                 android:paddingEnd="@dimen/button_padding"
                 android:text="@string/submit_test"
                 android:textAlignment="center"
-                android:textColor="@color/app_blue2"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
